@@ -1,0 +1,339 @@
+{
+  "event": {
+    "name": "ICC Youth Invitation Service",
+    "tagline": "A Youth Revival Encounter",
+    "date": "2026-06-28T10:00:00",
+    "endDate": "2026-06-28T12:00:00",
+    "time": "10:00 AM",
+    "venue": "ICC Main Sanctuary, Iloilo City",
+    "liveAttendeeCount": 250,
+    "posterImage": "/images/poster.svg",
+    "logo": "/images/logo.svg",
+    "logoWhite": "/images/logo-white.svg",
+    "reminderMessage": "Don't forget! ICC Youth Invitation Service — Rewrite Your Mind starts in 1 hour!"
+  },
+  "hero": {
+    "backgroundImage": "/images/hero-bg.svg",
+    "overlayColor": "#0f172a",
+    "overlayOpacity": 0.7,
+    "title": "Rewrite Your Mind",
+    "subtitle": "Romans 12:2 — Be transformed by the renewing of your mind",
+    "ctaText": "Register Now",
+    "ctaLink": "#register",
+    "secondaryCtaText": "Get Directions",
+    "secondaryCtaLink": "#location"
+  },
+  "about": {
+    "heading": "About Our Youth Ministry",
+    "whoWeAre": {
+      "title": "Who We Are",
+      "description": "We are a vibrant community of young believers passionate about knowing God, finding purpose, and making a difference. Our youth ministry provides a safe, welcoming space for young people to grow spiritually, build meaningful friendships, and discover their God-given potential.",
+      "icon": "Users"
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "To raise a generation of young leaders who are rooted in God's Word, filled with the Holy Spirit, and equipped to impact their schools, communities, and the world for Christ.",
+      "icon": "Eye"
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "To reach young people with the gospel, disciple them in their faith, connect them in meaningful community, and empower them for service and leadership in God's kingdom.",
+      "icon": "Target"
+    },
+    "welcomeMessage": {
+      "title": "A Message For You",
+      "message": "Whether you're new to faith, searching for answers, or looking to deepen your relationship with God — you are welcome here. Come as you are. Encounter God. Find your people. Rewrite your story.",
+      "author": "ICC Youth Ministry"
+    }
+  },
+  "whyAttend": [
+    {
+      "icon": "BookOpen",
+      "title": "Relevant Bible-Based Messages",
+      "description": "Experience powerful, practical teachings that speak directly to the challenges and questions young people face today — all grounded in God's Word.",
+      "gradient": "from-blue-500 to-cyan-500"
+    },
+    {
+      "icon": "Heart",
+      "title": "Meaningful Friendships",
+      "description": "Connect with other young believers who share your faith, values, and desire for authentic relationships that go beyond surface level.",
+      "gradient": "from-purple-500 to-pink-500"
+    },
+    {
+      "icon": "HandsPraying",
+      "title": "Worship and Prayer",
+      "description": "Encounter God's presence through heartfelt worship, prayer, and a spiritual atmosphere that transforms lives and renews minds.",
+      "gradient": "from-orange-500 to-red-500"
+    },
+    {
+      "icon": "Music",
+      "title": "Fun Activities and Events",
+      "description": "Enjoy a lively, engaging environment with icebreakers, fellowship games, and activities designed to build connection and create lasting memories.",
+      "gradient": "from-green-500 to-teal-500"
+    },
+    {
+      "icon": "Zap",
+      "title": "Personal Spiritual Growth",
+      "description": "Take the next step in your faith journey through discipleship, mentoring, and practical tools for building a strong spiritual foundation.",
+      "gradient": "from-yellow-500 to-orange-500"
+    }
+  ],
+  "whatsToExpect": {
+    "heading": "What To Expect",
+    "description": "A typical service runs approximately 2 hours with a flow designed to help you encounter God and connect with others.",
+    "totalDuration": "Approximately 2 Hours",
+    "items": [
+      {
+        "time": "10:00 AM",
+        "title": "Worship",
+        "description": "An opening session of spirited praise and worship to set the atmosphere and invite God's presence.",
+        "duration": "30 min",
+        "icon": "Music"
+      },
+      {
+        "time": "10:30 AM",
+        "title": "Welcome & Icebreaker",
+        "description": "A warm welcome to all guests followed by fun icebreaker activities to help everyone feel connected.",
+        "duration": "15 min",
+        "icon": "Wifi"
+      },
+      {
+        "time": "10:45 AM",
+        "title": "The Message",
+        "description": "A relevant, Bible-based message delivered to inspire, challenge, and transform young lives.",
+        "duration": "45 min",
+        "icon": "MessageCircle"
+      },
+      {
+        "time": "11:30 AM",
+        "title": "Fellowship",
+        "description": "Small group discussions and prayer time to process the message and build community.",
+        "duration": "20 min",
+        "icon": "Users"
+      },
+      {
+        "time": "11:50 AM",
+        "title": "Refreshments",
+        "description": "Light snacks and drinks served as we continue connecting and building relationships.",
+        "duration": "Open",
+        "icon": "Coffee"
+      }
+    ]
+  },
+  "speaker": {
+    "name": "BRO. FELIX",
+    "title": "Youth Minister & Speaker",
+    "photo": "/images/speaker.svg",
+    "bio": "Bro. Felix is a passionate youth minister dedicated to reaching the next generation with the transformative power of God's Word. With years of experience in youth ministry, he brings energy, wisdom, and a prophetic edge to every message he delivers. His heart is to see young people experience genuine life change and walk in their God-given purpose.",
+    "socials": {
+      "instagram": "https://instagram.com",
+      "facebook": "https://facebook.com",
+      "twitter": "https://twitter.com"
+    }
+  },
+  "highlights": {
+    "heading": "Event Highlights",
+    "quote": {
+      "text": "Do not conform to the pattern of this world, but be transformed by the renewing of your mind.",
+      "author": "Romans 12:2"
+    },
+    "scripture": {
+      "text": "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.",
+      "reference": "Jeremiah 29:11"
+    },
+    "keyTakeaways": [
+      "Learn how to renew your mind according to God's Word",
+      "Discover your identity and purpose in Christ",
+      "Build lasting friendships with like-minded young believers",
+      "Experience the transforming power of worship and prayer",
+      "Leave equipped to impact your generation for Christ"
+    ]
+  },
+  "gallery": [
+    {
+      "id": "g1",
+      "type": "image",
+      "src": "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800",
+      "title": "Youth Worship Night",
+      "category": "Youth Gatherings",
+      "width": 800,
+      "height": 600
+    },
+    {
+      "id": "g2",
+      "type": "image",
+      "src": "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800",
+      "title": "Sunday Worship Service",
+      "category": "Worship Services",
+      "width": 800,
+      "height": 900
+    },
+    {
+      "id": "g3",
+      "type": "image",
+      "src": "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800",
+      "title": "Youth Retreat 2025",
+      "category": "Retreats",
+      "width": 800,
+      "height": 600
+    },
+    {
+      "id": "g4",
+      "type": "image",
+      "src": "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800",
+      "title": "Community Service Project",
+      "category": "Service Projects",
+      "width": 800,
+      "height": 700
+    },
+    {
+      "id": "g5",
+      "type": "image",
+      "src": "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800",
+      "title": "Fellowship Gathering",
+      "category": "Fellowship Events",
+      "width": 800,
+      "height": 500
+    },
+    {
+      "id": "g6",
+      "type": "image",
+      "src": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800",
+      "title": "Youth Conference",
+      "category": "Youth Gatherings",
+      "width": 800,
+      "height": 800
+    },
+    {
+      "id": "g7",
+      "type": "image",
+      "src": "https://images.unsplash.com/photo-1508962914676-134849cca767?w=800",
+      "title": "Worship Band",
+      "category": "Worship Services",
+      "width": 800,
+      "height": 600
+    },
+    {
+      "id": "g8",
+      "type": "image",
+      "src": "https://images.unsplash.com/photo-1529543544282-ea668b5c259d?w=800",
+      "title": "Outreach Program",
+      "category": "Service Projects",
+      "width": 800,
+      "height": 600
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "t1",
+      "name": "Sarah M.",
+      "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200",
+      "testimony": "This youth ministry changed my life. I came in broken and confused, but through the messages and the love of this community, I found my purpose in Christ.",
+      "role": "Youth Member"
+    },
+    {
+      "id": "t2",
+      "name": "Joshua R.",
+      "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200",
+      "testimony": "The worship here is incredible. I've never felt God's presence like this before. The friendships I've made are genuine and have helped me grow so much.",
+      "role": "College Student"
+    },
+    {
+      "id": "t3",
+      "name": "Maria L.",
+      "photo": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200",
+      "testimony": "I was searching for meaning and found it here. The teachings are relevant to what I'm going through as a young person. This ministry feels like family.",
+      "role": "Young Professional"
+    },
+    {
+      "id": "t4",
+      "name": "David K.",
+      "photo": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200",
+      "testimony": "Being part of this youth group has been the best decision I've made. The mentorship, the Bible studies, the fun activities — it's all helped shape who I am today.",
+      "role": "High School Student"
+    }
+  ],
+  "faq": [
+    {
+      "id": "faq1",
+      "question": "Is registration required?",
+      "answer": "Yes, registration is encouraged so we can prepare enough seating, materials, and refreshments for everyone. Walk-ins are welcome, but registration helps us serve you better."
+    },
+    {
+      "id": "faq2",
+      "question": "What should I bring?",
+      "answer": "Just bring yourself and an open heart! You may want to bring a Bible, a notebook, and a pen. We'll provide everything else including refreshments."
+    },
+    {
+      "id": "faq3",
+      "question": "Can I invite my friends?",
+      "answer": "Absolutely! In fact, we encourage it. This event is designed for young people, and there's nothing better than experiencing God's presence together with friends."
+    },
+    {
+      "id": "faq4",
+      "question": "Is there any registration fee?",
+      "answer": "No, this event is completely free. We believe the gospel is for everyone, and we never want finances to be a barrier to encountering God."
+    },
+    {
+      "id": "faq5",
+      "question": "What age group is this for?",
+      "answer": "Our youth ministry serves young people from high school through young adult — typically ages 13 to 30. Everyone is welcome regardless of where they are in their faith journey."
+    },
+    {
+      "id": "faq6",
+      "question": "What time should I arrive?",
+      "answer": "Doors open at 9:30 AM, 30 minutes before the service starts at 10:00 AM. Arriving early gives you time to check in, grab a seat, and enjoy the pre-service atmosphere."
+    }
+  ],
+  "registration": {
+    "heading": "Register For The Event",
+    "description": "Fill out the form below to secure your spot. Registration is free and helps us prepare for your coming.",
+    "googleFormUrl": "",
+    "fields": [
+      { "name": "fullName", "label": "Full Name", "type": "text", "required": true, "placeholder": "Enter your full name" },
+      { "name": "age", "label": "Age", "type": "number", "required": true, "placeholder": "Your age" },
+      { "name": "phone", "label": "Phone Number", "type": "tel", "required": true, "placeholder": "Enter your phone number" },
+      { "name": "email", "label": "Email Address", "type": "email", "required": true, "placeholder": "Enter your email" },
+      { "name": "invitedBy", "label": "Invited By", "type": "text", "required": false, "placeholder": "Who invited you?" },
+      { "name": "prayerRequests", "label": "Prayer Requests", "type": "textarea", "required": false, "placeholder": "Share any prayer requests..." }
+    ],
+    "submitButtonText": "Register Now",
+    "successMessage": "Thank you for registering! We can't wait to see you at the event. Get ready for a life-changing experience!",
+    "apiEndpoint": ""
+  },
+  "contact": {
+    "phone": "+63 XXX XXX XXXX",
+    "email": "iccyouth@example.com",
+    "address": "ICC Main Sanctuary, Iloilo City, Philippines",
+    "churchName": "ICC Youth Ministry"
+  },
+  "socials": {
+    "facebook": "https://facebook.com",
+    "instagram": "https://instagram.com",
+    "youtube": "https://youtube.com",
+    "whatsapp": "https://wa.me/63XXXXXXXXXX",
+    "twitter": "https://twitter.com",
+    "tiktok": "https://tiktok.com"
+  },
+  "location": {
+    "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.0!2d122.5!3d10.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQyJzAwLjAiTiAxMjLCsDMwJzAwLjAiRQ!5e0!3m2!1sen!2sph!4v1",
+    "address": "ICC Main Sanctuary, Iloilo City, Philippines",
+    "latitude": 10.7,
+    "longitude": 122.5
+  },
+  "seo": {
+    "title": "ICC Youth Invitation Service — Rewrite Your Mind | June 28, 2026",
+    "description": "Join us for a powerful youth revival encounter! ICC Youth Invitation Service with Bro. Felix. Experience worship, fellowship, and life-changing messages. Register now!",
+    "ogImage": "/images/og-image.svg",
+    "ogType": "website",
+    "twitterHandle": "@iccyouth",
+    "keywords": ["youth event", "christian youth", "youth revival", "ICC youth", "youth ministry", "church event", "iloilo youth", "rewrite your mind"]
+  },
+  "theme": {
+    "primaryColor": "blue",
+    "secondaryColor": "purple",
+    "accentColor": "pink",
+    "fontFamily": "Inter",
+    "darkMode": true
+  }
+}
