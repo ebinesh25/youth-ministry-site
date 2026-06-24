@@ -1,7 +1,7 @@
 {
   "event": {
-    "name": "ICC Youth Invitation Service",
-    "tagline": "A Youth Revival Encounter",
+    "name": "REWRITE YOUR MIND",
+    "tagline": "A Youth Revival Encounter — Rewrite Your Mind",
     "date": "2026-06-28T10:00:00",
     "endDate": "2026-06-28T12:00:00",
     "time": "10:00 AM",
@@ -17,10 +17,10 @@
     "overlayColor": "#0f172a",
     "overlayOpacity": 0.7,
     "title": "Rewrite Your Mind",
-    "subtitle": "Romans 12:2 — Be transformed by the renewing of your mind",
-    "ctaText": "Register Now",
+    "subtitle": "\"Be transformed by the renewing of your mind.\" — Romans 12:2",
+    "ctaText": "REGISTER NOW",
     "ctaLink": "#register",
-    "secondaryCtaText": "Get Directions",
+    "secondaryCtaText": "EVENT INFO",
     "secondaryCtaLink": "#location"
   },
   "about": {
@@ -331,9 +331,9 @@
   },
   "theme": {
     "primaryColor": "blue",
-    "secondaryColor": "purple",
-    "accentColor": "pink",
-    "fontFamily": "Inter",
-    "darkMode": true
+    "secondaryColor": "sky",
+    "accentColor": "blue",
+    "fontFamily": "Montserrat",
+    "darkMode": false
   }
 }

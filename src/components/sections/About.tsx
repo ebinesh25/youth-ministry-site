@@ -1,71 +1,138 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Users, Eye, Target, Quote } from "lucide-react";
+import { MapPin, Clock, Heart } from "lucide-react";
 import { useEvent } from "@/hooks/useEvent";
-import SectionHeading from "@/components/ui/SectionHeading";
-import AnimatedSection from "@/components/ui/AnimatedSection";
-import GlassCard from "@/components/ui/GlassCard";
-
-const ICON_MAP: Record<string, React.ReactNode> = {
-  Users: <Users className="h-8 w-8" />,
-  Eye: <Eye className="h-8 w-8" />,
-  Target: <Target className="h-8 w-8" />,
-};
 
 export default function About() {
-  const { about } = useEvent();
-
-  const cards = [
-    { data: about.whoWeAre, gradient: "from-blue-500 to-cyan-500" },
-    { data: about.vision, gradient: "from-purple-500 to-pink-500" },
-    { data: about.mission, gradient: "from-orange-500 to-red-500" },
-  ];
+  const { about, event } = useEvent();
 
   return (
-    <section id="about" className="section-padding relative">
-      <div className="container-wide">
-        <AnimatedSection>
-          <SectionHeading title={about.heading} />
-        </AnimatedSection>
+    <section id="about" className="w-full bg-[#FAF8FF] py-[120px] max-md:py-10">
+      <div className="mx-auto flex max-w-[1280px] flex-col gap-24 px-6 max-md:gap-8">
+        {/* Two column layout */}
+        <div className="flex items-start justify-center gap-20 max-lg:flex-col">
+          {/* Left Column — Text */}
+          <div className="flex flex-1 flex-col gap-10 max-md:gap-5">
+            <span
+              className="inline-flex w-fit items-center bg-[#0EA5E9] px-4 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-white max-md:text-[8px] max-md:px-3"
+              style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
+            >
+              ABOUT
+            </span>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {cards.map((card, i) => (
-            <AnimatedSection key={card.data.title} delay={i * 0.1}>
-              <GlassCard className="h-full text-center">
-                <div
-                  className={`mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${card.gradient}`}
+            <h2
+              className="text-[60px] font-black uppercase leading-[60px] tracking-[-0.05em] max-md:text-[32px] max-md:leading-[32px]"
+              style={{
+                fontFamily: "var(--font-montserrat), sans-serif",
+                color: "var(--rym-navy)",
+              }}
+            >
+              REWRITE
+              <br />
+              <span className="text-[#0EA5E9]">YOUR MIND.</span>
+            </h2>
+
+            {/* Description - truncated on mobile */}
+            <p
+              className="text-base leading-relaxed text-[#3E4850] max-md:text-sm"
+              style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
+            >
+              {about.welcomeMessage.message}
+            </p>
+
+            {/* Stats row */}
+            <div className="flex gap-8 max-md:gap-4">
+              <div>
+                <p
+                  className="text-[36px] font-black uppercase leading-10 tracking-[-0.05em] max-md:text-2xl max-md:leading-7"
+                  style={{
+                    fontFamily: "var(--font-montserrat), sans-serif",
+                    color: "var(--rym-navy)",
+                  }}
                 >
-                  {ICON_MAP[card.data.icon] || (
-                    <Users className="h-8 w-8" />
-                  )}
-                </div>
-                <h3 className="font-display text-xl font-bold text-white">
-                  {card.data.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-400">
-                  {card.data.description}
+                  1 DAY
                 </p>
-              </GlassCard>
-            </AnimatedSection>
-          ))}
-        </div>
+                <p className="mt-1 text-xs font-bold uppercase tracking-[0.1em] text-black/40 max-md:text-[9px]">
+                  EVENT
+                </p>
+              </div>
+              <div>
+                <p
+                  className="text-[36px] font-black uppercase leading-10 tracking-[-0.05em] max-md:text-2xl max-md:leading-7"
+                  style={{
+                    fontFamily: "var(--font-montserrat), sans-serif",
+                    color: "var(--rym-navy)",
+                  }}
+                >
+                  2 HOURS
+                </p>
+                <p className="mt-1 text-xs font-bold uppercase tracking-[0.1em] text-black/40 max-md:text-[9px]">
+                  DURATION
+                </p>
+              </div>
+              <div>
+                <p
+                  className="text-[36px] font-black uppercase leading-10 tracking-[-0.05em] max-md:text-2xl max-md:leading-7"
+                  style={{
+                    fontFamily: "var(--font-montserrat), sans-serif",
+                    color: "var(--rym-navy)",
+                  }}
+                >
+                  FREE
+                </p>
+                <p className="mt-1 text-xs font-bold uppercase tracking-[0.1em] text-black/40 max-md:text-[9px]">
+                  ADMISSION
+                </p>
+              </div>
+            </div>
 
-        {/* Welcome Message */}
-        <AnimatedSection delay={0.3}>
-          <GlassCard className="mt-8 text-center" glow>
-            <Quote className="mx-auto h-8 w-8 text-purple-400" />
-            <h3 className="mt-4 font-display text-2xl font-bold text-white">
-              {about.welcomeMessage.title}
-            </h3>
-            <p className="mx-auto mt-4 max-w-3xl text-lg leading-relaxed text-slate-300">
-              &ldquo;{about.welcomeMessage.message}&rdquo;
-            </p>
-            <p className="mt-4 text-sm font-medium text-purple-400">
-              — {about.welcomeMessage.author}
-            </p>
-          </GlassCard>
-        </AnimatedSection>
+            {/* Info row */}
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center gap-3">
+                <MapPin className="h-5 w-5 shrink-0 text-[#0EA5E9] max-md:h-4 max-md:w-4" />
+                <span className="text-sm text-[#3E4850] max-md:text-xs">{event.venue}</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Clock className="h-5 w-5 shrink-0 text-[#0EA5E9] max-md:h-4 max-md:w-4" />
+                <span className="text-sm text-[#3E4850] max-md:text-xs">
+                  {new Date(event.date).toLocaleDateString("en-US", {
+                    weekday: "long",
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}{" "}
+                  at {event.time}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column — Image Card */}
+          <div className="relative flex-1">
+            {/* Blue offset background — hidden on mobile */}
+            <div className="absolute -top-4 left-4 h-[820px] w-full max-w-[576px] bg-[#0EA5E9] max-lg:hidden" />
+
+            {/* Image with border */}
+            <div className="relative z-10 h-[576px] w-full max-w-[576px] border-4 border-black bg-white max-lg:h-[400px] max-md:h-[220px] max-md:border-2">
+              <img
+                src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&q=80"
+                alt="Youth Community Gathering"
+                className="h-full w-full object-cover"
+              />
+            </div>
+
+            {/* Quote panel */}
+            <div className="relative z-10 ml-0 mt-4 flex w-full max-w-[576px] flex-col gap-3 border-l-8 border-[#0EA5E9] bg-black p-6 max-md:p-4 max-md:mt-3 max-md:gap-2 max-md:border-l-4">
+              <p className="text-base leading-relaxed text-white/70 max-md:text-xs max-md:leading-5">
+                &ldquo;{about.welcomeMessage.message}&rdquo;
+              </p>
+              <p className="flex items-center gap-2 text-sm font-bold text-white max-md:text-xs">
+                <Heart className="h-4 w-4 text-[#0EA5E9] max-md:h-3 max-md:w-3" />
+                {about.welcomeMessage.author}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

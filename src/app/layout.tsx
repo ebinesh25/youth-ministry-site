@@ -1,22 +1,16 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import { EventProvider } from "@/components/providers/EventProvider";
-import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { ConfettiProvider } from "@/components/providers/ConfettiProvider";
 import { getEventData } from "@/lib/event";
 import { generateStructuredEventSchema } from "@/lib/seo";
 import "./globals.css";
 
-const inter = Inter({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-montserrat",
   display: "swap",
-});
-
-const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-outfit",
-  display: "swap",
+  weight: ["400", "500", "600", "700", "900"],
 });
 
 export function generateMetadata(): Metadata {
@@ -50,14 +44,10 @@ export default function RootLayout({
   const data = getEventData();
 
   return (
-    <html lang="en" className="dark scroll-smooth">
-      <body
-        className={`${inter.variable} ${outfit.variable} font-sans bg-slate-950 text-white antialiased`}
-      >
+    <html lang="en" className={`${montserrat.variable} scroll-smooth`}>
+      <body className="antialiased">
         <EventProvider>
-          <ThemeProvider>
-            <ConfettiProvider>{children}</ConfettiProvider>
-          </ThemeProvider>
+          <ConfettiProvider>{children}</ConfettiProvider>
         </EventProvider>
         <script
           type="application/ld+json"

@@ -1,18 +1,11 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { Calendar, MapPin, ChevronDown } from "lucide-react";
 import { useEvent } from "@/hooks/useEvent";
-import CountdownTimer from "@/components/ui/CountdownTimer";
-import AddToCalendar from "@/components/ui/AddToCalendar";
-import ShareButton from "@/components/ui/ShareButton";
-import ReminderButton from "@/components/ui/ReminderButton";
-import AttendeeCounter from "@/components/ui/AttendeeCounter";
+
+const WATERMARK_WORDS = ["REWRITE", "YOUR", "MIND"];
 
 export default function Hero() {
-  const { hero, event, seo } = useEvent();
-  const [bgFailed, setBgFailed] = useState(false);
+  const { hero } = useEvent();
 
   const handleScroll = (id: string) => {
     const el = document.getElementById(id);
@@ -22,189 +15,113 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden"
+      className="relative flex min-h-[918px] items-center justify-center overflow-hidden bg-white max-md:min-h-[80svh] max-md:pb-20"
     >
-      {/* Background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={
-          bgFailed
-            ? {
-                background: `linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%)`,
-              }
-            : { backgroundImage: `url(${hero.backgroundImage})` }
-        }
-      >
-        {/* Hidden img to detect load failure */}
-        <img
-          src={hero.backgroundImage}
-          alt=""
-          className="hidden"
-          onError={() => setBgFailed(true)}
-        />
-      </div>
-      <div
-        className="absolute inset-0"
-        style={{
-          background: `linear-gradient(135deg, ${hero.overlayColor} 0%, rgba(15, 23, 42, 0.9) 50%, ${hero.overlayColor} 100%)`,
-          opacity: hero.overlayOpacity,
-        }}
-      />
-
-      {/* Animated background particles */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute h-1 w-1 rounded-full bg-white/10"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              opacity: [0, 0.5, 0],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 4,
-              repeat: Infinity,
-              delay: Math.random() * 3,
-            }}
-          />
+      {/* Background watermark — hidden on mobile to save space */}
+      <div className="pointer-events-none absolute inset-0 flex select-none flex-col items-center justify-center gap-8 opacity-5 max-md:hidden">
+        {[0, 1, 2].map((row) => (
+          <div key={row} className="flex items-center gap-8">
+            {WATERMARK_WORDS.map((word, i) => (
+              <span
+                key={i}
+                className="text-[256px] font-black uppercase leading-none tracking-[-0.05em]"
+                style={{
+                  fontFamily: "var(--font-montserrat), sans-serif",
+                  color:
+                    row === 1 && i === 1 ? "#6E7881" : "var(--rym-black)",
+                  WebkitTextStroke:
+                    row === 1 && i === 1 ? "2px var(--rym-black)" : "none",
+                }}
+              >
+                {word}
+              </span>
+            ))}
+          </div>
         ))}
       </div>
 
-      <div className="relative z-10 mx-auto max-w-5xl px-4 text-center">
-        {/* Logo */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-4"
-        >
-          <span className="inline-block rounded-full bg-white/10 px-4 py-1 text-sm font-medium text-blue-300 backdrop-blur-sm">
-            {event.tagline}
+      {/* Main content */}
+      <div className="relative z-10 mx-auto flex flex-col items-center gap-3 px-6 pt-24 max-md:pt-16 max-md:gap-2">
+        {/* Top badges */}
+        <div className="flex flex-wrap items-stretch justify-center gap-2">
+          <span
+            className="flex items-center bg-[#0EA5E9] px-3 py-0.5 text-[8px] font-black uppercase tracking-[0.2em] text-white max-md:text-[7px] max-md:px-2"
+            style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
+          >
+            YOUTH REVIVAL 2026
           </span>
-        </motion.div>
+          <span
+            className="flex items-center bg-black px-3 py-0.5 text-[8px] font-black uppercase tracking-[0.2em] text-white max-md:text-[7px] max-md:px-2"
+            style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
+          >
+            JUNE 28, 2026 • 10:00 AM
+          </span>
+        </div>
 
-        {/* Title */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="font-display text-5xl font-bold leading-tight text-white md:text-7xl lg:text-8xl"
+        {/* Main heading */}
+        <h1
+          className="text-center text-[128px] font-black uppercase leading-[128px] tracking-[-0.05em] max-md:text-[44px] max-md:leading-[44px] max-sm:text-[36px] max-sm:leading-[36px]"
+          style={{
+            fontFamily: "var(--font-montserrat), sans-serif",
+            color: "var(--rym-navy)",
+          }}
         >
-          {hero.title.split(" ").map((word, i) => (
-            <motion.span
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
-              className="inline-block"
-            >
-              {i === 1 ? (
-                <span className="gradient-text">{word} </span>
-              ) : (
-                word + " "
-              )}
-            </motion.span>
-          ))}
-        </motion.h1>
+          REWRITE
+          <br />
+          <span className="text-[#0EA5E9]">YOUR MIND</span>
+        </h1>
 
         {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mx-auto mt-4 max-w-2xl text-lg text-slate-300 md:text-xl"
+        <p
+          className="text-center text-lg italic leading-7 text-[#3E4850] max-md:text-sm max-md:leading-5"
+          style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
         >
-          {hero.subtitle}
-        </motion.p>
+          &ldquo;Be transformed by the renewing of your mind.&rdquo; — Romans
+          12:2
+        </p>
 
-        {/* Speaker & Date */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm text-slate-400"
+        {/* Speaker tag */}
+        <p
+          className="text-center text-xs font-bold italic uppercase leading-4 tracking-[0.1em] text-black/40 max-md:text-[9px] max-md:leading-3"
+          style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
         >
-          <span className="font-semibold text-purple-400">
-            Speaker: {seo.title.split("—")[0]?.trim() || "Bro. Felix"}
-          </span>
-          <span className="hidden text-slate-600 md:inline">|</span>
-          <span className="flex items-center gap-1">
-            <Calendar className="h-4 w-4" />
-            {new Date(event.date).toLocaleDateString("en-US", {
-              weekday: "long",
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}{" "}
-            at {event.time}
-          </span>
-          <span className="hidden text-slate-600 md:inline">|</span>
-          <span className="flex items-center gap-1">
-            <MapPin className="h-4 w-4" />
-            {event.venue}
-          </span>
-        </motion.div>
-
-        {/* Countdown */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-10"
-        >
-          <CountdownTimer targetDate={event.date} endDate={event.endDate} />
-        </motion.div>
+          FEATURING GUEST SPEAKER BRO. FELIX
+        </p>
 
         {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1 }}
-          className="mt-10 flex flex-wrap items-center justify-center gap-4"
-        >
+        <div className="mt-2 flex flex-wrap items-stretch justify-center gap-3">
           <button
             onClick={() => handleScroll("register")}
-            className="group relative overflow-hidden rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-4 font-semibold text-white transition-all hover:shadow-lg hover:shadow-purple-500/25"
+            className="flex items-center justify-center bg-black px-10 py-4 text-lg font-black uppercase tracking-[-0.05em] text-white transition-opacity hover:opacity-90 max-md:px-6 max-md:py-3 max-md:text-sm"
+            style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
-            <span className="relative z-10">{hero.ctaText}</span>
-            <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-purple-600 to-pink-600 transition-transform group-hover:translate-x-0" />
+            REGISTER NOW
           </button>
           <button
-            onClick={() => handleScroll("location")}
-            className="rounded-full border border-white/20 bg-white/10 px-8 py-4 font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/20"
+            onClick={() => handleScroll("about")}
+            className="flex items-center justify-center border-4 border-black bg-transparent px-10 py-4 text-lg font-black uppercase tracking-[-0.05em] text-[#131B2E] transition-colors hover:bg-black/5 max-md:px-6 max-md:py-3 max-md:text-sm max-md:border-2"
+            style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
-            {hero.secondaryCtaText}
+            EVENT INFO
           </button>
-        </motion.div>
-
-        {/* Action Buttons */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1.2 }}
-          className="mt-6 flex flex-wrap items-center justify-center gap-3"
-        >
-          <AddToCalendar />
-          <ShareButton title={seo.title} text={seo.description} />
-          <ReminderButton />
-          <AttendeeCounter targetCount={event.liveAttendeeCount} />
-        </motion.div>
+        </div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.button
-        onClick={() => handleScroll("about")}
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-slate-500"
-        aria-label="Scroll down"
-      >
-        <ChevronDown className="h-8 w-8" />
-      </motion.button>
+      {/* Scroll indicator — hidden on mobile */}
+      <div className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 max-md:hidden">
+        <span
+          className="text-[10px] font-black uppercase tracking-[0.1em]"
+          style={{
+            fontFamily: "var(--font-montserrat), sans-serif",
+            color: "var(--rym-navy)",
+          }}
+        >
+          SCROLL DOWN
+        </span>
+        <div className="h-12 w-[2px] bg-black/20">
+          <div className="h-full w-full bg-[#0EA5E9]" />
+        </div>
+      </div>
     </section>
   );
 }

@@ -1,85 +1,88 @@
 "use client";
 
-import { useState, useMemo } from "react";
-import { motion } from "framer-motion";
 import { useEvent } from "@/hooks/useEvent";
-import SectionHeading from "@/components/ui/SectionHeading";
-import AnimatedSection from "@/components/ui/AnimatedSection";
-import MasonryGrid from "@/components/ui/MasonryGrid";
-import Lightbox from "@/components/ui/Lightbox";
 import { cn } from "@/lib/utils";
+
+const LABELS = [
+  "GATHERING",
+  "WORSHIP",
+  "RETREATS",
+  "SERVICE",
+  "FELLOWSHIP",
+  "SPEAKER",
+];
 
 export default function Gallery() {
   const { gallery } = useEvent();
-  const [filter, setFilter] = useState("all");
-  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-
-  const categories = useMemo(() => {
-    const cats = [...new Set(gallery.map((item) => item.category))];
-    return ["all", ...cats];
-  }, [gallery]);
-
-  const filtered = useMemo(
-    () =>
-      filter === "all"
-        ? gallery
-        : gallery.filter((item) => item.category === filter),
-    [gallery, filter]
-  );
+  const items = gallery.slice(0, 6);
 
   return (
-    <section id="gallery" className="section-padding relative bg-slate-900/30">
-      <div className="container-wide">
-        <AnimatedSection>
-          <SectionHeading title="Photo Gallery" subtitle="Moments from our ministry" />
-        </AnimatedSection>
+    <section
+      id="gallery"
+      className="w-full bg-[#FAF8FF] px-6 py-[120px] max-md:py-10"
+    >
+      <div className="mx-auto flex max-w-[1280px] flex-col items-stretch gap-16 max-md:gap-8">
+        {/* Heading */}
+        <h2
+          className="text-center text-[96px] font-black uppercase leading-[96px] tracking-[-0.05em] max-md:text-[36px] max-md:leading-[36px]"
+          style={{
+            fontFamily: "var(--font-montserrat), sans-serif",
+            color: "var(--rym-navy)",
+          }}
+        >
+          MOMENTS.
+          <br />
+          <span className="text-[#0EA5E9]">GALLERY.</span>
+        </h2>
 
-        {/* Category Filter */}
-        <AnimatedSection delay={0.1}>
-          <div className="mb-8 flex flex-wrap justify-center gap-2">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setFilter(cat)}
+        {/* Grid — 3 col desktop, 2 col mobile */}
+        <div className="grid grid-cols-3 gap-8 max-lg:grid-cols-2 max-md:gap-3">
+          {items.map((item, i) => {
+            const isWorship = i === 1;
+            const isService = i === 3;
+
+            return (
+              <div
+                key={item.id}
                 className={cn(
-                  "rounded-full px-5 py-2 text-sm font-medium transition-all",
-                  filter === cat
-                    ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white"
-                    : "bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
+                  "relative border-4 border-black max-md:border-2",
+                  isWorship && "pt-12 max-md:pt-6",
+                  isService && "-mt-12 max-md:-mt-6",
                 )}
               >
-                {cat === "all" ? "All" : cat}
-              </button>
-            ))}
-          </div>
-        </AnimatedSection>
+                {/* Image */}
+                <div
+                  className={cn(
+                    "w-full overflow-hidden bg-white",
+                    isWorship || isService
+                      ? "aspect-square"
+                      : "h-[437.33px] max-md:h-[160px] max-sm:h-[120px]"
+                  )}
+                >
+                  <img
+                    src={item.src}
+                    alt={item.title}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
 
-        {/* Masonry Grid */}
-        <AnimatedSection delay={0.2}>
-          <MasonryGrid
-            items={filtered}
-            onItemClick={(index) => setLightboxIndex(index)}
-          />
-        </AnimatedSection>
+                {/* Label */}
+                <div className="absolute bottom-3 left-3 bg-black px-2 py-0.5 max-md:bottom-2 max-md:left-2">
+                  <span
+                    className="text-[10px] font-black uppercase tracking-[0.1em] text-white max-md:text-[8px]"
+                    style={{
+                      fontFamily: "var(--font-montserrat), sans-serif",
+                    }}
+                  >
+                    {LABELS[i] || item.category.toUpperCase()}
+                  </span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
-
-      {/* Lightbox */}
-      <Lightbox
-        items={filtered}
-        currentIndex={lightboxIndex ?? 0}
-        isOpen={lightboxIndex !== null}
-        onClose={() => setLightboxIndex(null)}
-        onPrev={() =>
-          setLightboxIndex((prev) =>
-            prev !== null ? (prev - 1 + filtered.length) % filtered.length : 0
-          )
-        }
-        onNext={() =>
-          setLightboxIndex((prev) =>
-            prev !== null ? (prev + 1) % filtered.length : 0
-          )
-        }
-      />
     </section>
   );
 }

@@ -1,106 +1,107 @@
 "use client";
 
-import { motion } from "framer-motion";
-import {
-  Music,
-  Wifi,
-  MessageCircle,
-  Users,
-  Coffee,
-  LucideIcon,
-} from "lucide-react";
 import { useEvent } from "@/hooks/useEvent";
-import SectionHeading from "@/components/ui/SectionHeading";
-import AnimatedSection from "@/components/ui/AnimatedSection";
-
-const ICON_MAP: Record<string, LucideIcon> = {
-  Music,
-  Wifi,
-  MessageCircle,
-  Users,
-  Coffee,
-};
+import { cn } from "@/lib/utils";
 
 export default function Schedule() {
   const { whatsToExpect } = useEvent();
 
   return (
-    <section id="schedule" className="section-padding relative bg-slate-900/30">
-      <div className="container-wide">
-        <AnimatedSection>
-          <SectionHeading
-            title={whatsToExpect.heading}
-            subtitle={whatsToExpect.description}
-          />
-        </AnimatedSection>
+    <section id="schedule" className="w-full bg-white px-[192px] py-[120px] max-lg:px-6 max-md:py-10">
+      <div className="mx-auto flex max-w-[896px] flex-col items-stretch gap-4">
+        {/* Heading */}
+        <div className="flex flex-col items-center gap-2">
+          <h2
+            className="text-center text-[96px] font-black uppercase leading-[96px] tracking-[-0.05em] max-md:text-[40px] max-md:leading-[40px]"
+            style={{
+              fontFamily: "var(--font-montserrat), sans-serif",
+              color: "var(--rym-navy)",
+            }}
+          >
+            THE
+            <br />
+            <span className="text-[#0EA5E9]">JOURNEY.</span>
+          </h2>
 
-        <AnimatedSection delay={0.2}>
-          <div className="relative mx-auto max-w-3xl">
-            {/* Vertical line */}
-            <div className="absolute left-6 top-0 h-full w-px bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 md:left-8" />
+          <p
+            className="text-center text-xs font-black uppercase leading-4 tracking-[0.1em] text-black/40 max-md:text-[9px]"
+            style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
+          >
+            DURATION: APPROXIMATELY {whatsToExpect.totalDuration}
+          </p>
+        </div>
 
-            <div className="space-y-8">
-              {whatsToExpect.items.map((item, i) => {
-                const Icon = ICON_MAP[item.icon || "Music"] || Music;
-                return (
-                  <motion.div
-                    key={item.title}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1, duration: 0.5 }}
-                    className="relative flex items-start gap-6 pl-16 md:pl-20"
+        {/* Schedule rows */}
+        <div className="mt-8 flex flex-col gap-3 max-md:mt-4">
+          {whatsToExpect.items.map((item, i) => {
+            const isHighlighted = item.title === "The Message";
+
+            return (
+              <div
+                key={item.title}
+                className={cn(
+                  "flex items-center gap-8 border-4 border-black p-8 max-md:flex-col max-md:items-start max-md:gap-2 max-md:p-4 max-md:border-2",
+                  isHighlighted && "border-black bg-black text-white"
+                )}
+              >
+                {/* Time */}
+                <div className="shrink-0">
+                  <span
+                    className={cn(
+                      "text-base font-black uppercase tracking-[-0.02em] max-md:text-sm",
+                      isHighlighted ? "text-white" : "text-[#131B2E]"
+                    )}
+                    style={{
+                      fontFamily: "var(--font-montserrat), sans-serif",
+                    }}
                   >
-                    {/* Timeline dot */}
-                    <div className="absolute left-4 top-1 flex h-5 w-5 items-center justify-center md:left-[1.45rem]">
-                      <div className="h-3 w-3 rounded-full bg-purple-500 ring-4 ring-slate-900/50" />
-                    </div>
+                    {item.time}
+                  </span>
+                </div>
 
-                    {/* Icon */}
-                    <div className="hidden shrink-0 md:block">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/5">
-                        <Icon className="h-6 w-6 text-purple-400" />
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="glass-card flex-1 p-5">
-                      <div className="flex flex-wrap items-center justify-between gap-2">
-                        <h3 className="font-display text-lg font-bold text-white">
-                          {item.title}
-                        </h3>
-                        <span className="rounded-full bg-purple-500/20 px-3 py-1 text-xs font-medium text-purple-300">
-                          {item.duration}
-                        </span>
-                      </div>
-                      <p className="mt-2 text-sm text-slate-400">
-                        {item.description}
-                      </p>
-                      {item.speaker && (
-                        <p className="mt-2 text-xs font-medium text-blue-400">
-                          Speaker: {item.speaker}
-                        </p>
+                {/* Content */}
+                <div className="flex flex-1 flex-col gap-1">
+                  <div className="flex items-center gap-3">
+                    <h3
+                      className="text-lg font-black uppercase tracking-[-0.02em] max-md:text-sm"
+                      style={{
+                        fontFamily: "var(--font-montserrat), sans-serif",
+                      }}
+                    >
+                      {item.title}
+                    </h3>
+                    <span
+                      className={cn(
+                        "px-2 py-0.5 text-[10px] font-black uppercase tracking-[0.1em] max-md:text-[8px]",
+                        isHighlighted
+                          ? "bg-white text-black"
+                          : "bg-black text-white"
                       )}
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-
-            {/* Total duration */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="mt-8 text-center"
-            >
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/5 px-6 py-3 text-sm text-slate-400">
-                <span className="h-2 w-2 rounded-full bg-green-400" />
-                {whatsToExpect.totalDuration}
-              </span>
-            </motion.div>
-          </div>
-        </AnimatedSection>
+                      style={{
+                        fontFamily: "var(--font-montserrat), sans-serif",
+                      }}
+                    >
+                      {item.duration}
+                    </span>
+                  </div>
+                  <p
+                    className={cn(
+                      "text-sm leading-relaxed max-md:text-xs",
+                      isHighlighted
+                        ? "text-white/70"
+                        : "text-[#3E4850]"
+                    )}
+                    style={{
+                      fontFamily: "var(--font-montserrat), sans-serif",
+                    }}
+                  >
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

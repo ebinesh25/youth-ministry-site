@@ -1,23 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
-import {
-  BookOpen,
-  Heart,
-  Hand,
-  Music,
-  Zap,
-  LucideIcon,
-} from "lucide-react";
+import { BookOpen, Heart, Music, Zap, Hand, LucideIcon } from "lucide-react";
 import { useEvent } from "@/hooks/useEvent";
-import SectionHeading from "@/components/ui/SectionHeading";
-import AnimatedSection from "@/components/ui/AnimatedSection";
-import GlassCard from "@/components/ui/GlassCard";
+import { cn } from "@/lib/utils";
 
 const ICON_MAP: Record<string, LucideIcon> = {
   BookOpen,
   Heart,
-  HandsPraying: Hand,
+  HandsPraying: Heart,
   Music,
   Zap,
 };
@@ -26,52 +16,64 @@ export default function WhyAttend() {
   const { whyAttend } = useEvent();
 
   return (
-    <section id="whyAttend" className="section-padding relative">
-      <div className="container-wide">
-        <AnimatedSection>
-          <SectionHeading
-            title="Why You Should Attend"
-            subtitle="Here's what awaits you at this event"
-          />
-        </AnimatedSection>
-
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: 0.1 } },
+    <section className="w-full border-t-4 border-black bg-[#FAF8FF] pb-20 pt-20 max-md:pb-10 max-md:pt-6">
+      <div className="mx-auto flex max-w-[1280px] flex-col items-center gap-8 px-6 max-md:gap-5">
+        {/* Heading */}
+        <h2
+          className="text-center text-[36px] font-black uppercase leading-10 tracking-[-0.025em] max-md:text-2xl max-md:leading-7"
+          style={{
+            fontFamily: "var(--font-montserrat), sans-serif",
+            color: "var(--rym-navy)",
           }}
-          className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
         >
+          WHY ATTEND?
+        </h2>
+
+        {/* Cards — 5 per row on desktop, 2 per row on mobile */}
+        <div className="flex flex-wrap justify-center gap-6 max-md:gap-3">
           {whyAttend.map((item, i) => {
             const Icon = ICON_MAP[item.icon] || BookOpen;
+            const isLong = i >= 3;
+
             return (
-              <motion.div
+              <div
                 key={item.title}
-                variants={{
-                  hidden: { opacity: 0, y: 40 },
-                  visible: { opacity: 1, y: 0 },
-                }}
+                className={cn(
+                  "flex flex-col gap-2 border-2 border-black",
+                  isLong ? "pb-11" : "pb-6",
+                  "w-[220px] max-md:w-[calc(50%-8px)] max-md:min-w-[140px] max-md:flex-1"
+                )}
+                style={{ padding: "16px 16px 0" }}
               >
-                <GlassCard className="group h-full">
-                  <div
-                    className={`mb-4 inline-flex rounded-2xl bg-gradient-to-br ${item.gradient} p-4`}
-                  >
-                    <Icon className="h-7 w-7 text-white" />
-                  </div>
-                  <h3 className="font-display text-xl font-bold text-white">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-slate-400">
-                    {item.description}
-                  </p>
-                </GlassCard>
-              </motion.div>
+                {/* Blue circle icon */}
+                <div className="mb-1 flex h-8 w-8 items-center justify-center rounded-full bg-[#0EA5E9] max-md:h-6 max-md:w-6">
+                  <Icon className="h-4 w-4 text-white max-md:h-3 max-md:w-3" />
+                </div>
+
+                {/* Title */}
+                <h3
+                  className="text-sm font-black uppercase leading-tight tracking-[-0.02em] max-md:text-[11px]"
+                  style={{
+                    fontFamily: "var(--font-montserrat), sans-serif",
+                    color: "var(--rym-navy)",
+                  }}
+                >
+                  {item.title}
+                </h3>
+
+                {/* Description */}
+                <p
+                  className="text-[11px] leading-relaxed text-[#3E4850] max-md:text-[10px]"
+                  style={{
+                    fontFamily: "var(--font-montserrat), sans-serif",
+                  }}
+                >
+                  {item.description}
+                </p>
+              </div>
             );
           })}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
