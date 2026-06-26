@@ -308,7 +308,7 @@
         "Ayyavoo Colony, Arumbakkam,",
         "Chennai – 600106"
       ],
-      "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Daniel+Thomas+School%2C+11A+Perumal+Koil+Street%2C+Razaak+Garden%2C+Ayyavoo+Colony%2C+Arumbakkam%2C+Chennai+600106"
+      "googleMapsUrl": "https://maps.google.com/maps?q=Daniel+Thomas+School+Arumbakkam+Chennai+600106&output=embed"
     },
     {
       "region": "NORTH REGION",
@@ -320,7 +320,7 @@
         "Chennai – 600081",
         "Landmark: Opposite to N4 Beach"
       ],
-      "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=New+No.+3%2F4%2C+Old+No.+172%2C+Washer+Varadhappan+Street%2C+1st+Floor%2C+New+Washermenpet%2C+Chennai+600081"
+      "googleMapsUrl": "https://maps.google.com/maps?q=Washer+Varadhappan+Street+New+Washermenpet+Chennai+600081&output=embed"
     },
     {
       "region": "WEST REGION",
@@ -330,7 +330,7 @@
         "100, N Park Street, Venkatapuram,",
         "Ambattur, Chennai – 600053"
       ],
-      "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=FZ+Party+Hall%2C+100+N+Park+Street%2C+Venkatapuram%2C+Ambattur%2C+Chennai+600053"
+      "googleMapsUrl": "https://maps.google.com/maps?q=FZ+Party+Hall+Venkatapuram+Ambattur+Chennai+600053&output=embed"
     },
     {
       "region": "TAMBARAM REGION",
@@ -340,7 +340,7 @@
         "VK Nagar, Indira Nagar,",
         "Selaiyur, Chennai – 600073"
       ],
-      "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Patras+Mini+Party+Hall%2C+VK+Nagar%2C+Indira+Nagar%2C+Selaiyur%2C+Chennai+600073"
+      "googleMapsUrl": "https://maps.google.com/maps?q=Patras+Mini+Party+Hall+Selaiyur+Chennai+600073&output=embed"
     },
     {
       "region": "POONAMALLEE ZONE",
@@ -351,7 +351,7 @@
         "Sarojini Varadhappan Girls School,",
         "Poonamallee, Chennai – 600056"
       ],
-      "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Community+Hall%2C+Kandhasamy+Nagar%2C+Sarojini+Varadhappan+Girls+School%2C+Poonamallee%2C+Chennai+600056"
+      "googleMapsUrl": "https://maps.google.com/maps?q=Community+Hall+Poonamallee+Chennai+600056&output=embed"
     },
     {
       "region": "SOUTH REGION",
@@ -363,7 +363,7 @@
         "Raja Annamalai Puram,",
         "Chennai – 600028"
       ],
-      "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Muthamizh+Peravai%2C+92+Durgabai+Deshmukh+Road%2C+Near+Sathya+Studio%2C+Opp.+Dr.+MGR+Janaki+College%2C+Raja+Annamalai+Puram%2C+Chennai+600028"
+      "googleMapsUrl": "https://maps.google.com/maps?q=Muthamizh+Peravai+Raja+Annamalai+Puram+Chennai+600028&output=embed"
     }
   ],
   "contact": {

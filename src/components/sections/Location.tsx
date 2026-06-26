@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { useEvent } from "@/hooks/useEvent";
 import { cn } from "@/lib/utils";
@@ -8,6 +8,21 @@ import { cn } from "@/lib/utils";
 export default function Location() {
   const { location, contact, event, venues } = useEvent();
   const [activeVenue, setActiveVenue] = useState<number | null>(null);
+  const userInteracted = useRef(false);
+
+  useEffect(() => {
+    if (venues.length === 0) return;
+    const interval = setInterval(() => {
+      if (userInteracted.current) return;
+      setActiveVenue((prev) => (prev === null || prev >= venues.length - 1 ? 0 : prev + 1));
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [venues.length]);
+
+  const handleVenueClick = (i: number) => {
+    userInteracted.current = true;
+    setActiveVenue(activeVenue === i ? null : i);
+  };
 
   const mapSrc = activeVenue !== null ? venues[activeVenue]?.googleMapsUrl : location.embedUrl;
 
@@ -43,7 +58,7 @@ export default function Location() {
                 {venues.map((venue, i) => (
                   <button
                     key={i}
-                    onClick={() => setActiveVenue(activeVenue === i ? null : i)}
+                    onClick={() => handleVenueClick(i)}
                     className={cn(
                       "flex flex-col gap-1 border-2 p-3 text-left transition-all",
                       activeVenue === i
