@@ -1,10 +1,15 @@
 "use client";
 
+import { useState } from "react";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { useEvent } from "@/hooks/useEvent";
+import { cn } from "@/lib/utils";
 
 export default function Location() {
-  const { location, contact, event } = useEvent();
+  const { location, contact, event, venues } = useEvent();
+  const [activeVenue, setActiveVenue] = useState<number | null>(null);
+
+  const mapSrc = activeVenue !== null ? venues[activeVenue]?.googleMapsUrl : location.embedUrl;
 
   const infoItems = [
     { icon: <MapPin className="h-6 w-6 text-[#0EA5E9]" />, text: location.address },
@@ -13,10 +18,7 @@ export default function Location() {
   ];
 
   return (
-    <section className="w-full border-t-4 border-black bg-[#FAF8FF] px-6 py-[120px] max-md:py-10">
-      <div className="mx-auto flex max-w-[1280px] items-center justify-center gap-16 max-lg:flex-col max-lg:gap-8">
-        {/* Left column — Info */}
-        <div className="flex flex-1 flex-col gap-6 max-md:gap-4">
+    <section className="mx-auto border-t-4 border-black bg-[#FAF8FF] px-6 py-[120px] max-md:py-10">
           <h2
             className="text-[60px] font-black uppercase leading-[60px] tracking-[-0.05em] max-md:text-[36px] max-md:leading-[36px]"
             style={{
@@ -26,34 +28,68 @@ export default function Location() {
           >
             {location.heading}
             <br />
-            <span className="text-[#0EA5E9]">{location.headingHighlight}</span>
+            <span className="text-[#0EA5E9] text-[32px]  tracking-[-0.05em]">{location.headingHighlight}</span>
           </h2>
+      <div className="mt-8 flex max-w-[1280px] items-center justify-center gap-16 max-lg:flex-col max-lg:gap-8">
+        {/* Left column — Info */}
+        <div className="w-full flex flex-1 flex-col gap-6 max-md:gap-4">
 
-          <div className="flex flex-col gap-4 max-md:gap-3">
-            {infoItems.map((item, i) => (
-              <div key={i} className="flex items-center gap-4 max-md:gap-3">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center border-2 border-black max-md:h-9 max-md:w-9">
-                  {item.icon}
-                </div>
-                <span
-                  className="text-base text-[#3E4850] max-md:text-sm"
-                  style={{
-                    fontFamily: "var(--font-montserrat), sans-serif",
-                  }}
-                >
-                  {item.text}
-                </span>
+          {/* Regional Venues */}
+          {venues.length > 0 && (
+            <div className="flex flex-col gap-4">
+              <div className="grid grid-cols-2 gap-3 lg:grid-cols-3">
+                {venues.map((venue, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActiveVenue(activeVenue === i ? null : i)}
+                    className={cn(
+                      "flex flex-col gap-1 border-2 p-3 text-left transition-all",
+                      activeVenue === i
+                        ? "border-[#0EA5E9] bg-[#0EA5E9]/5"
+                        : "border-black bg-transparent hover:border-[#0EA5E9]/50"
+                    )}
+                  >
+                    <span
+                      className={cn(
+                        "text-[10px] font-black uppercase tracking-[0.1em] transition-colors",
+                        activeVenue === i ? "text-[#0EA5E9]" : "text-[#0EA5E9]"
+                      )}
+                      style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
+                    >
+                      {venue.region}
+                    </span>
+                    {venue.dayTime && (
+                      <span
+                        className="text-[9px] font-bold uppercase tracking-[0.05em]"
+                        style={{ fontFamily: "var(--font-montserrat), sans-serif", color: "var(--rym-navy)" }}
+                      >
+                        {venue.dayTime}
+                      </span>
+                    )}
+                    <div className="mt-1 flex flex-col gap-0">
+                      {venue.address.map((line, j) => (
+                        <span
+                          key={j}
+                          className="text-[10px] leading-tight text-[#3E4850]"
+                          style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
+                        >
+                          {line}
+                        </span>
+                      ))}
+                    </div>
+                  </button>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          )}
         </div>
 
         {/* Right column — Map */}
         <div className="flex-1 w-full">
           <div className="border-4 border-black bg-white max-md:border-2">
-            {location.embedUrl ? (
+            {mapSrc ? (
               <iframe
-                src={location.embedUrl}
+                src={mapSrc}
                 width="100%"
                 height="320"
                 style={{ border: 0 }}

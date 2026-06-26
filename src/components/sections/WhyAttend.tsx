@@ -40,7 +40,7 @@ export default function WhyAttend() {
                 key={item.title}
                 className={cn(
                   "flex flex-col gap-2 border-2 border-black",
-                  isLong ? "pb-11" : "pb-6",
+                  isLong ? "!pb-11" : "!pb-6",
                   "w-[220px] max-md:w-[calc(50%-8px)] max-md:min-w-[140px] max-md:flex-1"
                 )}
                 style={{ padding: "16px 16px 0" }}

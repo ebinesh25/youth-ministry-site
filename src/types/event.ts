@@ -1,3 +1,10 @@
+export interface Venue {
+  region: string;
+  dayTime: string;
+  address: string[];
+  googleMapsUrl: string;
+}
+
 export interface EventData {
   event: EventInfo;
   hero: HeroSection;
@@ -5,6 +12,7 @@ export interface EventData {
   whyAttend: WhyAttendItem[];
   whyAttendSection: SectionHeadingOnly;
   schedule?: ScheduleItem[];
+  venues: Venue[];
   speaker: Speaker;
   marquee: MarqueeSection;
   gallery: GalleryItem[];
