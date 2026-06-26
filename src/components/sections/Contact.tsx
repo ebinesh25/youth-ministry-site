@@ -6,13 +6,13 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import GlassCard from "@/components/ui/GlassCard";
 
-const SOCIAL_ICONS: Record<string, { icon: React.ReactNode; label: string }> = {
-  facebook: { icon: <Facebook className="h-5 w-5" />, label: "Facebook" },
-  instagram: { icon: <Instagram className="h-5 w-5" />, label: "Instagram" },
-  youtube: { icon: <Youtube className="h-5 w-5" />, label: "YouTube" },
-  twitter: { icon: <Twitter className="h-5 w-5" />, label: "Twitter" },
-  tiktok: { icon: <Music2 className="h-5 w-5" />, label: "TikTok" },
-  website: { icon: <Globe className="h-5 w-5" />, label: "Website" },
+const SOCIAL_ICONS: Record<string, React.ReactNode> = {
+  facebook: <Facebook className="h-5 w-5" />,
+  instagram: <Instagram className="h-5 w-5" />,
+  youtube: <Youtube className="h-5 w-5" />,
+  twitter: <Twitter className="h-5 w-5" />,
+  tiktok: <Music2 className="h-5 w-5" />,
+  website: <Globe className="h-5 w-5" />,
 };
 
 export default function Contact() {
@@ -22,7 +22,7 @@ export default function Contact() {
     <section id="contact" className="section-padding relative">
       <div className="container-wide">
         <AnimatedSection>
-          <SectionHeading title="Get In Touch" subtitle="We'd love to hear from you" />
+          <SectionHeading title={contact.heading} subtitle={contact.subtitle} />
         </AnimatedSection>
 
         <div className="grid gap-6 md:grid-cols-2">
@@ -30,7 +30,7 @@ export default function Contact() {
           <AnimatedSection delay={0.1}>
             <GlassCard className="h-full">
               <h3 className="font-display text-xl font-bold text-white">
-                Contact Information
+                {contact.infoHeading}
               </h3>
               <div className="mt-6 space-y-4">
                 <div className="flex items-start gap-4">
@@ -38,7 +38,7 @@ export default function Contact() {
                     <Phone className="h-5 w-5 text-blue-400" />
                   </div>
                   <div>
-                    <p className="text-sm text-slate-500">Phone</p>
+                    <p className="text-sm text-slate-500">{contact.labels.phone}</p>
                     <p className="text-white">{contact.phone}</p>
                   </div>
                 </div>
@@ -47,7 +47,7 @@ export default function Contact() {
                     <Mail className="h-5 w-5 text-purple-400" />
                   </div>
                   <div>
-                    <p className="text-sm text-slate-500">Email</p>
+                    <p className="text-sm text-slate-500">{contact.labels.email}</p>
                     <p className="text-white">{contact.email}</p>
                   </div>
                 </div>
@@ -56,7 +56,7 @@ export default function Contact() {
                     <MapPin className="h-5 w-5 text-pink-400" />
                   </div>
                   <div>
-                    <p className="text-sm text-slate-500">Address</p>
+                    <p className="text-sm text-slate-500">{contact.labels.address}</p>
                     <p className="text-white">{contact.address}</p>
                   </div>
                 </div>
@@ -68,10 +68,10 @@ export default function Contact() {
           <AnimatedSection delay={0.2}>
             <GlassCard className="h-full">
               <h3 className="font-display text-xl font-bold text-white">
-                Follow Us
+                {contact.followUsHeading}
               </h3>
               <p className="mt-2 text-sm text-slate-400">
-                Stay connected on social media
+                {contact.socialSubtitle}
               </p>
               <div className="mt-6 grid grid-cols-2 gap-3">
                 {Object.entries(socials).map(([platform, url]) => {
@@ -86,8 +86,8 @@ export default function Contact() {
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 rounded-xl bg-white/5 px-4 py-3 transition-colors hover:bg-white/10"
                     >
-                      <span className="text-slate-400">{info.icon}</span>
-                      <span className="text-sm text-white">{info.label}</span>
+                      <span className="text-slate-400">{info}</span>
+                      <span className="text-sm text-white">{contact.platformLabels[platform]}</span>
                     </a>
                   );
                 })}

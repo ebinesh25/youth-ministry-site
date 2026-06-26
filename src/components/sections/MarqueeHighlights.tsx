@@ -1,11 +1,10 @@
-const ITEMS = [
-  "TRANSFORMING LIVES",
-  "RENEWING MINDS",
-  "EMPOWERING YOUTH",
-];
+"use client";
+
+import { useEvent } from "@/hooks/useEvent";
 
 export default function MarqueeHighlights() {
-  const duplicated = [...ITEMS, ...ITEMS, ...ITEMS];
+  const { marquee } = useEvent();
+  const duplicated = [...marquee.items, ...marquee.items, ...marquee.items];
 
   return (
     <section className="w-full border-y-4 border-black bg-white">

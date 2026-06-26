@@ -3,7 +3,7 @@
 import { useEvent } from "@/hooks/useEvent";
 
 export default function Testimonials() {
-  const { testimonials } = useEvent();
+  const { testimonials, testimonialsSection } = useEvent();
 
   if (!testimonials.length) return null;
 
@@ -20,7 +20,7 @@ export default function Testimonials() {
             color: "var(--rym-black)",
           }}
         >
-          WHAT THEY&apos;RE SAYING.
+          {testimonialsSection.heading}
         </h2>
 
         {/* Marquee rows */}
@@ -30,7 +30,7 @@ export default function Testimonials() {
             {duplicated.map((t, i) => (
               <div
                 key={`r1-${t.id}-${i}`}
-                className="flex h-[180px] w-[320px] shrink-0 flex-col gap-4 border-4 border-black bg-white p-6 max-md:h-[150px] max-md:w-[260px] max-md:p-4 max-md:gap-3 max-md:border-2"
+                className="flex h-auto w-[320px] shrink-0 flex-col gap-4 border-4 border-black bg-white p-6 max-md:h-[150px] max-md:w-[260px] max-md:p-4 max-md:gap-3 max-md:border-2"
               >
                 <div>
                   <p
@@ -60,7 +60,7 @@ export default function Testimonials() {
             {duplicated.map((t, i) => (
               <div
                 key={`r2-${t.id}-${i}`}
-                className="flex h-[180px] w-[320px] shrink-0 flex-col gap-4 border-4 border-black bg-white p-6 max-md:h-[150px] max-md:w-[260px] max-md:p-4 max-md:gap-3 max-md:border-2"
+                className="flex h-auto w-[320px] shrink-0 flex-col gap-4 border-4 border-black bg-white p-6 max-md:h-[150px] max-md:w-[260px] max-md:p-4 max-md:gap-3 max-md:border-2"
               >
                 <div>
                   <p

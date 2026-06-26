@@ -13,7 +13,7 @@ const ICON_MAP: Record<string, LucideIcon> = {
 };
 
 export default function WhyAttend() {
-  const { whyAttend } = useEvent();
+  const { whyAttend, whyAttendSection } = useEvent();
 
   return (
     <section className="w-full border-t-4 border-black bg-[#FAF8FF] pb-20 pt-20 max-md:pb-10 max-md:pt-6">
@@ -26,7 +26,7 @@ export default function WhyAttend() {
             color: "var(--rym-navy)",
           }}
         >
-          WHY ATTEND?
+          {whyAttendSection.heading}
         </h2>
 
         {/* Cards — 5 per row on desktop, 2 per row on mobile */}

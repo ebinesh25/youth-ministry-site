@@ -25,7 +25,7 @@ export default function Highlights() {
                 <Quote className="h-7 w-7 text-white" />
               </div>
               <h3 className="font-display text-lg font-bold text-white">
-                Theme Verse
+                {highlights.themeVerseTitle}
               </h3>
               <p className="mt-4 leading-relaxed text-slate-300 italic">
                 &ldquo;{highlights.quote.text}&rdquo;
@@ -43,7 +43,7 @@ export default function Highlights() {
                 <Bookmark className="h-7 w-7 text-white" />
               </div>
               <h3 className="font-display text-lg font-bold text-white">
-                God&apos;s Promise
+                {highlights.godsPromiseTitle}
               </h3>
               <p className="mt-4 leading-relaxed text-slate-300 italic">
                 &ldquo;{highlights.scripture.text}&rdquo;
@@ -61,7 +61,7 @@ export default function Highlights() {
                 <ListChecks className="h-7 w-7 text-white" />
               </div>
               <h3 className="font-display text-lg font-bold text-white">
-                Key Takeaways
+                {highlights.keyTakeawaysTitle}
               </h3>
               <ul className="mt-4 space-y-3">
                 {highlights.keyTakeaways.map((takeaway, i) => (

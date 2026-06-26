@@ -3,11 +3,16 @@ export interface EventData {
   hero: HeroSection;
   about: AboutSection;
   whyAttend: WhyAttendItem[];
-  schedule: ScheduleItem[];
+  whyAttendSection: SectionHeadingOnly;
+  schedule?: ScheduleItem[];
   speaker: Speaker;
+  marquee: MarqueeSection;
   gallery: GalleryItem[];
+  gallerySection: SectionHeadingWithHighlight;
   testimonials: Testimonial[];
+  testimonialsSection: SectionHeadingOnly;
   faq: FAQItem[];
+  faqSection: SectionHeadingWithSubtitle;
   registration: RegistrationSection;
   contact: ContactSection;
   socials: SocialLinks;
@@ -16,6 +21,24 @@ export interface EventData {
   theme: ThemeConfig;
   highlights: HighlightsSection;
   whatsToExpect: WhatToExpectSection;
+}
+
+export interface SectionHeadingOnly {
+  heading: string;
+}
+
+export interface SectionHeadingWithHighlight {
+  heading: string;
+  headingHighlight: string;
+}
+
+export interface SectionHeadingWithSubtitle {
+  heading: string;
+  subtitle: string;
+}
+
+export interface MarqueeSection {
+  items: string[];
 }
 
 export interface EventInfo {
@@ -52,6 +75,9 @@ export interface HeroSection {
 }
 
 export interface AboutSection {
+  badge: string;
+  tagline: string;
+  taglineHighlight: string;
   heading: string;
   whoWeAre: {
     title: string;
@@ -73,6 +99,13 @@ export interface AboutSection {
     message: string;
     author: string;
   };
+  stats: StatItem[];
+  imageAlt: string;
+}
+
+export interface StatItem {
+  value: string;
+  label: string;
 }
 
 export interface WhyAttendItem {
@@ -93,6 +126,8 @@ export interface ScheduleItem {
 
 export interface WhatToExpectSection {
   heading: string;
+  headingHighlight: string;
+  durationPrefix: string;
   description: string;
   totalDuration: string;
   items: ScheduleItem[];
@@ -100,6 +135,9 @@ export interface WhatToExpectSection {
 
 export interface HighlightsSection {
   heading: string;
+  themeVerseTitle: string;
+  godsPromiseTitle: string;
+  keyTakeawaysTitle: string;
   quote: {
     text: string;
     author: string;
@@ -112,6 +150,9 @@ export interface HighlightsSection {
 }
 
 export interface Speaker {
+  badge: string;
+  sectionHeading: string;
+  sectionSubtitle: string;
   name: string;
   title: string;
   photo: string;
@@ -152,6 +193,9 @@ export interface FAQItem {
 export interface RegistrationSection {
   heading: string;
   description: string;
+  successHeading: string;
+  processingText: string;
+  badgeText: string;
   googleFormUrl?: string;
   fields?: FormField[];
   submitButtonText: string;
@@ -168,6 +212,17 @@ export interface FormField {
 }
 
 export interface ContactSection {
+  heading: string;
+  subtitle: string;
+  infoHeading: string;
+  labels: {
+    phone: string;
+    email: string;
+    address: string;
+  };
+  followUsHeading: string;
+  socialSubtitle: string;
+  platformLabels: Record<string, string>;
   phone: string;
   email: string;
   address: string;
@@ -185,6 +240,9 @@ export interface SocialLinks {
 }
 
 export interface LocationSection {
+  heading: string;
+  headingHighlight: string;
+  mapTitle: string;
   embedUrl: string;
   address: string;
   latitude: number;
@@ -194,6 +252,7 @@ export interface LocationSection {
 export interface SEOConfig {
   title: string;
   description: string;
+  baseUrl: string;
   ogImage: string;
   ogType: string;
   twitterHandle?: string;

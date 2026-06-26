@@ -19,7 +19,7 @@
     "title": "Rewrite",
     "subtitle": "God Can Rewrite Your Story",
     "mainTitleHighlight": false,
-    "watermarkWords": ["REWRITE", "YOUR", "MIND"],
+    "watermarkWords": ["REWRITE"],
     "topBadge": "YOUTH REVIVAL 2026",
     "quoteText": false,
     "quoteAuthor": false,
@@ -31,6 +31,9 @@
     "secondaryCtaLink": "#about"
   },
   "about": {
+    "badge": "ABOUT",
+    "tagline": "REWRITE",
+    "taglineHighlight": false,
     "heading": "About Our Youth Ministry",
     "whoWeAre": {
       "title": "Who We Are",
@@ -51,7 +54,16 @@
       "title": "A Message For You",
       "message": "Whether you're new to faith, searching for answers, or looking to deepen your relationship with God — you are welcome here. Come as you are. Encounter God. Find your people. Rewrite your story.",
       "author": "ICC Youth Ministry"
-    }
+    },
+    "stats": [
+      { "value": "1 DAY", "label": "EVENT" },
+      { "value": "2 HOURS", "label": "DURATION" },
+      { "value": "FREE", "label": "ADMISSION" }
+    ],
+    "imageAlt": "Youth Community Gathering"
+  },
+  "whyAttendSection": {
+    "heading": "WHY ATTEND?"
   },
   "whyAttend": [
     {
@@ -86,9 +98,11 @@
     }
   ],
   "whatsToExpect": {
-    "heading": "What To Expect",
+    "heading": "THE",
+    "headingHighlight": "JOURNEY.",
+    "durationPrefix": "DURATION: ",
     "description": "A typical service runs approximately 2 hours with a flow designed to help you encounter God and connect with others.",
-    "totalDuration": "Approximately 2 Hours",
+    "totalDuration": "2 Hours",
     "items": [
       {
         "time": "10:00 AM",
@@ -128,6 +142,9 @@
     ]
   },
   "speaker": {
+    "badge": "GUEST SPEAKER",
+    "sectionHeading": "Meet Our Speaker",
+    "sectionSubtitle": "A word from our guest",
     "name": "BRO. FELIX",
     "title": "Youth Minister & Speaker",
     "photo": "/images/speaker.svg",
@@ -140,6 +157,9 @@
   },
   "highlights": {
     "heading": "Event Highlights",
+    "themeVerseTitle": "Theme Verse",
+    "godsPromiseTitle": "God's Promise",
+    "keyTakeawaysTitle": "Key Takeaways",
     "quote": {
       "text": "Do not conform to the pattern of this world, but be transformed by the renewing of your mind.",
       "author": "Romans 12:2"
@@ -155,6 +175,13 @@
       "Experience the transforming power of worship and prayer",
       "Leave equipped to impact your generation for Christ"
     ]
+  },
+  "marquee": {
+    "items": ["TRANSFORMING LIVES", "RENEWING MINDS", "EMPOWERING YOUTH"]
+  },
+  "gallerySection": {
+    "heading": "MOMENTS.",
+    "headingHighlight": "GALLERY."
   },
   "gallery": [
     {
@@ -230,6 +257,9 @@
       "height": 600
     }
   ],
+  "testimonialsSection": {
+    "heading": "WHAT THEY'RE SAYING."
+  },
   "testimonials": [
     {
       "id": "t1",
@@ -260,6 +290,10 @@
       "role": "High School Student"
     }
   ],
+  "faqSection": {
+    "heading": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know"
+  },
   "faq": [
     {
       "id": "faq1",
@@ -295,6 +329,9 @@
   "registration": {
     "heading": "Register For The Event",
     "description": "Fill out the form below to secure your spot. Registration is free and helps us prepare for your coming.",
+    "successHeading": "Registration Successful!",
+    "processingText": "PROCESSING...",
+    "badgeText": "JOIN THE REVOLUTION",
     "googleFormUrl": "",
     "fields": [
       { "name": "fullName", "label": "Full Name", "type": "text", "required": true, "placeholder": "Enter your full name" },
@@ -309,6 +346,24 @@
     "apiEndpoint": ""
   },
   "contact": {
+    "heading": "Get In Touch",
+    "subtitle": "We'd love to hear from you",
+    "infoHeading": "Contact Information",
+    "labels": {
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address"
+    },
+    "followUsHeading": "Follow Us",
+    "socialSubtitle": "Stay connected on social media",
+    "platformLabels": {
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "youtube": "YouTube",
+      "twitter": "Twitter",
+      "tiktok": "TikTok",
+      "website": "Website"
+    },
     "phone": "+63 XXX XXX XXXX",
     "email": "iccyouth@example.com",
     "address": "ICC Main Sanctuary, Iloilo City, Philippines",
@@ -323,7 +378,10 @@
     "tiktok": "https://tiktok.com"
   },
   "location": {
-    "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.0!2d122.5!3d10.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQyJzAwLjAiTiAxMjLCsDMwJzAwLjAiRQ!5e0!3m2!1sen!2sph!4v1",
+    "heading": "FIND",
+    "headingHighlight": "US.",
+    "mapTitle": "Event Location",
+    "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.0!2d122.5!3d10.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQyJzAwLjAiTiAxMjDCsDMwJzAwLjAiRQ!5e0!3m2!1sen!2sph!4v1",
     "address": "ICC Main Sanctuary, Iloilo City, Philippines",
     "latitude": 10.7,
     "longitude": 122.5
@@ -331,6 +389,7 @@
   "seo": {
     "title": "ICC Youth Invitation Service — Rewrite | June 28, 2026",
     "description": "Join us for a powerful youth revival encounter! ICC Youth Invitation Service with Bro. Felix. Experience worship, fellowship, and life-changing messages. Register now!",
+    "baseUrl": "https://iccyouthinvitation.org",
     "ogImage": "/images/og-image.svg",
     "ogType": "website",
     "twitterHandle": "@iccyouth",

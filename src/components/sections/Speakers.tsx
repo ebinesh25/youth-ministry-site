@@ -23,7 +23,7 @@ export default function Speakers() {
     <section id="speakers" className="section-padding relative bg-slate-900/30">
       <div className="container-wide">
         <AnimatedSection>
-          <SectionHeading title="Meet Our Speaker" subtitle="A word from our guest" />
+          <SectionHeading title={speaker.sectionHeading} subtitle={speaker.sectionSubtitle} />
         </AnimatedSection>
 
         <AnimatedSection delay={0.2}>

@@ -24,9 +24,9 @@ export default function Location() {
               color: "var(--rym-navy)",
             }}
           >
-            FIND
+            {location.heading}
             <br />
-            <span className="text-[#0EA5E9]">US.</span>
+            <span className="text-[#0EA5E9]">{location.headingHighlight}</span>
           </h2>
 
           <div className="flex flex-col gap-4 max-md:gap-3">
@@ -60,7 +60,7 @@ export default function Location() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Event Location"
+                title={location.mapTitle}
                 className="block max-md:h-[200px]"
               />
             ) : (

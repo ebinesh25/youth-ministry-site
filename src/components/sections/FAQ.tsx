@@ -54,7 +54,7 @@ function AccordionItem({
 }
 
 export default function FAQ() {
-  const { faq } = useEvent();
+  const { faq, faqSection } = useEvent();
   const [openId, setOpenId] = useState<string | null>(null);
 
   if (!faq.length) return null;
@@ -64,8 +64,8 @@ export default function FAQ() {
       <div className="container-wide">
         <AnimatedSection>
           <SectionHeading
-            title="Frequently Asked Questions"
-            subtitle="Everything you need to know"
+            title={faqSection.heading}
+            subtitle={faqSection.subtitle}
           />
         </AnimatedSection>
 

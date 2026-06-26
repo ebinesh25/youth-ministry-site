@@ -17,7 +17,7 @@ export default function About() {
               className="inline-flex w-fit items-center bg-[#0EA5E9] px-4 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-white max-md:text-[8px] max-md:px-3"
               style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
             >
-              ABOUT
+              {about.badge}
             </span>
 
             <h2
@@ -27,9 +27,9 @@ export default function About() {
                 color: "var(--rym-navy)",
               }}
             >
-              REWRITE
+              {about.tagline}
               <br />
-              <span className="text-[#0EA5E9]">YOUR MIND.</span>
+              <span className="text-[#0EA5E9]">{about.taglineHighlight}</span>
             </h2>
 
             {/* Description - truncated on mobile */}
@@ -42,48 +42,22 @@ export default function About() {
 
             {/* Stats row */}
             <div className="flex gap-8 max-md:gap-4">
-              <div>
-                <p
-                  className="text-[36px] font-black uppercase leading-10 tracking-[-0.05em] max-md:text-2xl max-md:leading-7"
-                  style={{
-                    fontFamily: "var(--font-montserrat), sans-serif",
-                    color: "var(--rym-navy)",
-                  }}
-                >
-                  1 DAY
-                </p>
-                <p className="mt-1 text-xs font-bold uppercase tracking-[0.1em] text-black/40 max-md:text-[9px]">
-                  EVENT
-                </p>
-              </div>
-              <div>
-                <p
-                  className="text-[36px] font-black uppercase leading-10 tracking-[-0.05em] max-md:text-2xl max-md:leading-7"
-                  style={{
-                    fontFamily: "var(--font-montserrat), sans-serif",
-                    color: "var(--rym-navy)",
-                  }}
-                >
-                  2 HOURS
-                </p>
-                <p className="mt-1 text-xs font-bold uppercase tracking-[0.1em] text-black/40 max-md:text-[9px]">
-                  DURATION
-                </p>
-              </div>
-              <div>
-                <p
-                  className="text-[36px] font-black uppercase leading-10 tracking-[-0.05em] max-md:text-2xl max-md:leading-7"
-                  style={{
-                    fontFamily: "var(--font-montserrat), sans-serif",
-                    color: "var(--rym-navy)",
-                  }}
-                >
-                  FREE
-                </p>
-                <p className="mt-1 text-xs font-bold uppercase tracking-[0.1em] text-black/40 max-md:text-[9px]">
-                  ADMISSION
-                </p>
-              </div>
+              {about.stats.map((stat, i) => (
+                <div key={i}>
+                  <p
+                    className="text-[36px] font-black uppercase leading-10 tracking-[-0.05em] max-md:text-2xl max-md:leading-7"
+                    style={{
+                      fontFamily: "var(--font-montserrat), sans-serif",
+                      color: "var(--rym-navy)",
+                    }}
+                  >
+                    {stat.value}
+                  </p>
+                  <p className="mt-1 text-xs font-bold uppercase tracking-[0.1em] text-black/40 max-md:text-[9px]">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
             </div>
 
             {/* Info row */}
@@ -116,7 +90,7 @@ export default function About() {
             <div className="relative z-10 h-[576px] w-full max-w-[576px] border-4 border-black bg-white max-lg:h-[400px] max-md:h-[220px] max-md:border-2">
               <img
                 src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&q=80"
-                alt="Youth Community Gathering"
+                alt={about.imageAlt}
                 className="h-full w-full object-cover"
               />
             </div>

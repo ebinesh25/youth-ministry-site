@@ -54,7 +54,7 @@ export default function Registration() {
               color: "var(--rym-navy)",
             }}
           >
-            Registration Successful!
+            {registration.successHeading}
           </h3>
           <p className="text-[#3E4850]">{registration.successMessage}</p>
         </div>
@@ -142,12 +142,12 @@ export default function Registration() {
                   color: "var(--rym-navy)",
                 }}
               >
-                Prayer Requests
+                {registration.fields?.find(f => f.name === "prayerRequests")?.label || "Prayer Requests"}
               </label>
               <textarea
                 value={formData.prayerRequests || ""}
                 onChange={(e) => handleChange("prayerRequests", e.target.value)}
-                placeholder="Share any prayer requests..."
+                placeholder={registration.fields?.find(f => f.name === "prayerRequests")?.placeholder || "Share any prayer requests..."}
                 rows={4}
                 className="w-full resize-none border-[1px] border-b-[4px] border-black bg-transparent p-3 text-base text-[#131B2E] placeholder-black/30 outline-none transition-colors focus:border-[#0EA5E9]"
                 style={{
@@ -169,7 +169,7 @@ export default function Registration() {
               {isLoading ? (
                 <span className="flex items-center gap-2">
                   <Loader2 className="h-6 w-6 animate-spin" />
-                  PROCESSING...
+                  {registration.processingText}
                 </span>
               ) : (
                 registration.submitButtonText
@@ -186,7 +186,7 @@ export default function Registration() {
               fontFamily: "var(--font-montserrat), sans-serif",
             }}
           >
-            JOIN THE REVOLUTION
+            {registration.badgeText}
           </span>
         </div>
       </div>

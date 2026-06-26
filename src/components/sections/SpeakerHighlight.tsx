@@ -33,7 +33,7 @@ export default function SpeakerHighlight() {
             className="inline-flex w-fit items-center bg-[#0EA5E9] px-4 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-black max-md:text-[8px] max-md:px-3"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
-            GUEST SPEAKER
+            {speaker.badge}
           </span>
 
           {/* Name */}
@@ -44,9 +44,9 @@ export default function SpeakerHighlight() {
               color: "var(--rym-white)",
             }}
           >
-            BRO.
+            {speaker.name.substring(0, 4)}
             <br />
-            <span className="text-[#0EA5E9]">FELIX</span>
+            <span className="text-[#0EA5E9]">{speaker.name.substring(5)}</span>
           </h2>
 
           {/* Bio */}
@@ -54,9 +54,7 @@ export default function SpeakerHighlight() {
             className="max-w-lg text-lg leading-8 text-white/70 max-md:text-sm max-md:leading-6"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
-            A prophetic voice for the next generation. Bringing energy, wisdom,
-            and the transformative power of the Word to ICC Iloilo for this
-            special revival.
+            {speaker.bio}
           </p>
 
           {/* Social icons */}
@@ -68,7 +66,7 @@ export default function SpeakerHighlight() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-12 w-12 items-center justify-center border-2 border-white/20 text-white/70 transition-colors hover:border-white hover:text-white max-md:h-8 max-md:w-8"
-                aria-label={`Social link ${i + 1}`}
+                aria-label={speaker.socials ? Object.keys(speaker.socials)[i] || `Social link ${i + 1}` : `Social link ${i + 1}`}
               >
                 {social.icon}
               </a>
@@ -113,7 +111,7 @@ export default function SpeakerHighlight() {
                   fontFamily: "var(--font-montserrat), sans-serif",
                 }}
               >
-                FELIX.
+                {speaker.name.substring(5)}.
               </span>
             </div>
           </div>

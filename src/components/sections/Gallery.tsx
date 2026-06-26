@@ -3,17 +3,10 @@
 import { useEvent } from "@/hooks/useEvent";
 import { cn } from "@/lib/utils";
 
-const LABELS = [
-  "GATHERING",
-  "WORSHIP",
-  "RETREATS",
-  "SERVICE",
-  "FELLOWSHIP",
-  "SPEAKER",
-];
+
 
 export default function Gallery() {
-  const { gallery } = useEvent();
+  const { gallery, gallerySection } = useEvent();
   const items = gallery.slice(0, 6);
 
   return (
@@ -30,9 +23,9 @@ export default function Gallery() {
             color: "var(--rym-navy)",
           }}
         >
-          MOMENTS.
+          {gallerySection.heading}
           <br />
-          <span className="text-[#0EA5E9]">GALLERY.</span>
+          <span className="text-[#0EA5E9]">{gallerySection.headingHighlight}</span>
         </h2>
 
         {/* Grid — 3 col desktop, 2 col mobile */}
@@ -75,7 +68,7 @@ export default function Gallery() {
                       fontFamily: "var(--font-montserrat), sans-serif",
                     }}
                   >
-                    {LABELS[i] || item.category.toUpperCase()}
+                    {item.category.toUpperCase()}
                   </span>
                 </div>
               </div>

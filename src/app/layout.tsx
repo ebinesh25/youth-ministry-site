@@ -16,7 +16,7 @@ const montserrat = Montserrat({
 export function generateMetadata(): Metadata {
   const data = getEventData();
   return {
-    metadataBase: new URL("https://iccyouthinvitation.org"),
+    metadataBase: new URL(data.seo.baseUrl),
     title: data.seo.title,
     description: data.seo.description,
     keywords: data.seo.keywords.join(", "),

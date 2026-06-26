@@ -18,16 +18,16 @@ export default function Schedule() {
               color: "var(--rym-navy)",
             }}
           >
-            THE
+            {whatsToExpect.heading}
             <br />
-            <span className="text-[#0EA5E9]">JOURNEY.</span>
+            <span className="text-[#0EA5E9]">{whatsToExpect.headingHighlight}</span>
           </h2>
 
           <p
             className="text-center text-xs font-black uppercase leading-4 tracking-[0.1em] text-black/40 max-md:text-[9px]"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
-            DURATION: APPROXIMATELY {whatsToExpect.totalDuration}
+            {whatsToExpect.durationPrefix}{whatsToExpect.totalDuration}
           </p>
         </div>
 
