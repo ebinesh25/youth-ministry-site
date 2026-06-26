@@ -69,7 +69,7 @@ export interface HeroSection {
   overlayOpacity: number;
   title: string;
   subtitle: string;
-  mainTitleHighlight: string;
+  mainTitleHighlight: string | false;
   watermarkWords: string[];
   topBadge: string;
   quoteText: string;
@@ -85,7 +85,7 @@ export interface HeroSection {
 export interface AboutSection {
   badge: string;
   tagline: string;
-  taglineHighlight: string;
+  taglineHighlight: string | false;
   heading: string;
   whoWeAre: {
     title: string;

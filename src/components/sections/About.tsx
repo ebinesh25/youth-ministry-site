@@ -28,8 +28,12 @@ export default function About() {
               }}
             >
               {about.tagline}
-              <br />
-              <span className="text-[#0EA5E9]">{about.taglineHighlight}</span>
+              {about.taglineHighlight && (
+                <>
+                  <br />
+                  <span className="text-[#0EA5E9]">{about.taglineHighlight}</span>
+                </>
+              )}
             </h2>
 
             {/* Description - truncated on mobile */}
@@ -58,26 +62,6 @@ export default function About() {
                   </p>
                 </div>
               ))}
-            </div>
-
-            {/* Info row */}
-            <div className="flex flex-col gap-3">
-              <div className="flex items-center gap-3">
-                <MapPin className="h-5 w-5 shrink-0 text-[#0EA5E9] max-md:h-4 max-md:w-4" />
-                <span className="text-sm text-[#3E4850] max-md:text-xs">{event.venue}</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Clock className="h-5 w-5 shrink-0 text-[#0EA5E9] max-md:h-4 max-md:w-4" />
-                <span className="text-sm text-[#3E4850] max-md:text-xs">
-                  {new Date(event.date).toLocaleDateString("en-US", {
-                    weekday: "long",
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}{" "}
-                  at {event.time}
-                </span>
-              </div>
             </div>
           </div>
 

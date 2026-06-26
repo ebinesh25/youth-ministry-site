@@ -19,16 +19,17 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-[918px] items-center justify-center overflow-hidden bg-white max-md:min-h-[80svh] max-md:pb-20"
+      className="relative flex min-h-[918px] items-center justify-center overflow-hidden bg-white max-md:min-h-[80svh] max-md:pb-10"
     >
-      {/* Background watermark — hidden on mobile to save space */}
-      <div className="pointer-events-none absolute inset-0 flex select-none flex-col items-center justify-center gap-8 opacity-5 max-md:hidden">
+
+      {/* Background watermark — desktop */}
+      <div className="pointer-events-none absolute inset-0 flex select-none flex-col items-center justify-center gap-8 opacity-5">
         {[0, 1, 2].map((row) => (
           <div key={row} className="flex items-center gap-8">
             {hero.watermarkWords.map((word, i) => (
               <span
                 key={i}
-                className="text-[256px] font-black uppercase leading-none tracking-[-0.05em]"
+                className="text-[256px] max-md:text-[200px] font-black uppercase leading-none tracking-[-0.05em]"
                 style={{
                   fontFamily: "var(--font-montserrat), sans-serif",
                   color:
@@ -45,17 +46,17 @@ export default function Hero() {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 mx-auto flex flex-col items-center gap-3 px-6 pt-24 max-md:pt-16 max-md:gap-2">
+      <div className="relative z-10 mx-auto flex w-full flex-col items-center gap-3 px-6 pt-24 max-md:pt-12 max-md:gap-2 max-sm:pt-8">
         {/* Top badges */}
         <div className="flex flex-wrap items-stretch justify-center gap-2">
           <span
-            className="flex items-center bg-[#0EA5E9] px-3 py-0.5 text-[8px] font-black uppercase tracking-[0.2em] text-white max-md:text-[7px] max-md:px-2"
+            className="flex items-center bg-[#0EA5E9] px-3 py-1 text-[8px] font-black uppercase tracking-[0.2em] text-white max-md:text-[10px] max-md:px-3 max-sm:text-[9px] max-sm:px-2"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
             {hero.topBadge}
           </span>
           <span
-            className="flex items-center bg-black px-3 py-0.5 text-[8px] font-black uppercase tracking-[0.2em] text-white max-md:text-[7px] max-md:px-2"
+            className="flex items-center bg-black px-3 py-1 text-[8px] font-black uppercase tracking-[0.2em] text-white max-md:text-[10px] max-md:px-3 max-sm:text-[9px] max-sm:px-2"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
             {formattedDate} &bull; {event.time}
@@ -71,8 +72,12 @@ export default function Hero() {
           }}
         >
           {hero.title}
-          <br />
-          <span className="text-[#0EA5E9]">{hero.mainTitleHighlight}</span>
+          {hero.mainTitleHighlight && (
+            <>
+              <br />
+              <span className="text-[#0EA5E9]">{hero.mainTitleHighlight}</span>
+            </>
+          )}
         </h1>
 
         {/* Quote */}
@@ -92,17 +97,10 @@ export default function Hero() {
         </p>
 
         {/* CTA Buttons */}
-        <div className="mt-2 flex flex-wrap items-stretch justify-center gap-3">
-          <button
-            onClick={() => handleScroll(hero.ctaLink.replace("#", ""))}
-            className="flex items-center justify-center bg-black px-10 py-4 text-lg font-black uppercase tracking-[-0.05em] text-white transition-opacity hover:opacity-90 max-md:px-6 max-md:py-3 max-md:text-sm"
-            style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
-          >
-            {hero.ctaText}
-          </button>
+        <div className="mt-2 flex flex-wrap items-stretch justify-center gap-3 max-sm:w-full max-sm:flex-col max-sm:px-4">
           <button
             onClick={() => handleScroll(hero.secondaryCtaLink.replace("#", ""))}
-            className="flex items-center justify-center border-4 border-black bg-transparent px-10 py-4 text-lg font-black uppercase tracking-[-0.05em] text-[#131B2E] transition-colors hover:bg-black/5 max-md:px-6 max-md:py-3 max-md:text-sm max-md:border-2"
+            className="flex items-center justify-center border-4 border-black bg-transparent px-10 py-4 text-lg font-black uppercase tracking-[-0.05em] text-[#131B2E] transition-colors hover:bg-black/5 max-md:px-6 max-md:py-3 max-md:text-sm max-md:border-2 max-sm:w-full"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
             {hero.secondaryCtaText}

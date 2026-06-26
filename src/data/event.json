@@ -18,8 +18,8 @@
     "overlayOpacity": 0.7,
     "title": "Rewrite",
     "subtitle": "God Can Rewrite Your Story",
-    "mainTitleHighlight": "YOUR MIND",
-    "watermarkWords": ["REWRITE", "YOUR", "MIND"],
+    "mainTitleHighlight": false,
+    "watermarkWords": ["REWRITE"],
     "topBadge": "YOUTH REVIVAL 2026",
     "quoteText": "Do not conform to the pattern of this world, but be transformed by the renewing of your mind.",
     "quoteAuthor": "Romans 12:2",
@@ -33,7 +33,7 @@
   "about": {
     "badge": "ABOUT",
     "tagline": "REWRITE",
-    "taglineHighlight": "YOUR MIND.",
+    "taglineHighlight": false,
     "heading": "About Our Youth Ministry",
     "whoWeAre": {
       "title": "Who We Are",

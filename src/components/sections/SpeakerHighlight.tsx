@@ -56,22 +56,6 @@ export default function SpeakerHighlight() {
           >
             {speaker.bio}
           </p>
-
-          {/* Social icons */}
-          <div className="mt-4 flex gap-4 max-md:mt-2">
-            {socials.map((social, i) => (
-              <a
-                key={i}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-12 w-12 items-center justify-center border-2 border-white/20 text-white/70 transition-colors hover:border-white hover:text-white max-md:h-8 max-md:w-8"
-                aria-label={speaker.socials ? Object.keys(speaker.socials)[i] || `Social link ${i + 1}` : `Social link ${i + 1}`}
-              >
-                {social.icon}
-              </a>
-            ))}
-          </div>
         </div>
 
         {/* Right column — Image */}
