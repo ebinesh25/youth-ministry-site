@@ -106,39 +106,84 @@
     "items": [
       {
         "time": "10:00 AM",
-        "title": "Worship",
-        "description": "An opening session of spirited praise and worship to set the atmosphere and invite God's presence.",
-        "duration": "30 min",
+        "title": "Fellowship",
+        "description": "Time to connect and catch up with one another.",
+        "duration": "10 min",
+        "icon": "Users"
+      },
+      {
+        "time": "10:10 AM",
+        "title": "Worship Songs",
+        "description": "Lifting our voices in praise to God.",
+        "duration": "10 min",
+        "icon": "Music"
+      },
+      {
+        "time": "10:20 AM",
+        "title": "Welcome",
+        "description": "A warm welcome to everyone joining us.",
+        "duration": "5 min",
+        "icon": "Wifi"
+      },
+      {
+        "time": "10:25 AM",
+        "title": "Communion Song",
+        "description": "Preparing our hearts for communion.",
+        "duration": "5 min",
         "icon": "Music"
       },
       {
         "time": "10:30 AM",
-        "title": "Welcome & Icebreaker",
-        "description": "A warm welcome to all guests followed by fun icebreaker activities to help everyone feel connected.",
-        "duration": "15 min",
+        "title": "Communion & Contribution",
+        "description": "Jesus rewrote the story of separation into a story of relationship.",
+        "duration": "10 min",
+        "icon": "Heart",
+        "note": "Matthew 27:51"
+      },
+      {
+        "time": "10:40 AM",
+        "title": "Ice Breakers",
+        "description": "Fun activities to get everyone engaged.",
+        "duration": "10 min",
         "icon": "Wifi"
       },
       {
-        "time": "10:45 AM",
-        "title": "The Message",
-        "description": "A relevant, Bible-based message delivered to inspire, challenge, and transform young lives.",
-        "duration": "45 min",
-        "icon": "MessageCircle"
+        "time": "10:50 AM",
+        "title": "Fired Up Song",
+        "description": "A high-energy worship moment.",
+        "duration": "5 min",
+        "icon": "Music"
       },
       {
-        "time": "11:30 AM",
-        "title": "Fellowship",
-        "description": "Small group discussions and prayer time to process the message and build community.",
+        "time": "10:55 AM",
+        "title": "Lesson",
+        "description": "The main message for the day.",
+        "duration": "40 min",
+        "icon": "MessageCircle",
+        "speaker": "Bro. Felix"
+      },
+      {
+        "time": "11:35 AM",
+        "title": "Reflection & Announcements",
+        "description": "Processing the message and important updates.",
         "duration": "20 min",
-        "icon": "Users"
+        "icon": "Heart"
       },
       {
-        "time": "11:50 AM",
-        "title": "Refreshments",
-        "description": "Light snacks and drinks served as we continue connecting and building relationships.",
-        "duration": "Open",
-        "icon": "Coffee"
+        "time": "11:55 AM",
+        "title": "Closing Song",
+        "description": "Wrapping up in worship.",
+        "duration": "5 min",
+        "icon": "Music"
       }
+    ],
+    "songs": [
+      { "title": "Alangara Vasalale", "order": 1 },
+      { "title": "Lord, I Lift Your Name on High", "order": 2 },
+      { "title": "Unga Naamam Uyaranum", "order": 3 },
+      { "title": "Above All (Communion)", "order": 4 },
+      { "title": "Nandri Solli (Before Lesson)", "order": 5 },
+      { "title": "Neer Ennai Marakkala (Closing)", "order": 6 }
     ]
   },
   "speaker": {
@@ -149,6 +194,7 @@
     "title": "Youth Minister & Speaker",
     "photo": "/images/speaker.svg",
     "bio": "Bro. Felix is a passionate youth minister dedicated to reaching the next generation with the transformative power of God's Word. With years of experience in youth ministry, he brings energy, wisdom, and a prophetic edge to every message he delivers. His heart is to see young people experience genuine life change and walk in their God-given purpose.",
+    "messageTranslation": "Bro. Arockiayaraj Bilavandran",
     "socials": {
       "instagram": "https://instagram.com",
       "facebook": "https://facebook.com",

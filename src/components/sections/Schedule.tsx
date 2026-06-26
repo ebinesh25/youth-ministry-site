@@ -34,7 +34,7 @@ export default function Schedule() {
         {/* Schedule rows */}
         <div className="mt-8 flex flex-col gap-3 max-md:mt-4">
           {whatsToExpect.items.map((item, i) => {
-            const isHighlighted = item.title === "The Message";
+            const isHighlighted = item.title === "Lesson";
 
             return (
               <div
@@ -102,6 +102,36 @@ export default function Schedule() {
             );
           })}
         </div>
+
+        {/* Songs List */}
+        {whatsToExpect.songs?.length > 0 && (
+          <div className="mt-12 max-md:mt-8">
+            <h3
+              className="mb-4 text-center text-2xl font-black uppercase tracking-[-0.02em] max-md:text-lg"
+              style={{
+                fontFamily: "var(--font-montserrat), sans-serif",
+                color: "var(--rym-navy)",
+              }}
+            >
+              songs list
+            </h3>
+            <div className="flex flex-wrap justify-center gap-2">
+              {whatsToExpect.songs.map((song) => (
+                <span
+                  key={song.order}
+                  className="w-full inline-flex items-center border-2 border-black px-4 py-2 text-sm font-bold uppercase tracking-[-0.02em] max-md:text-xs max-md:px-3 max-md:py-1.5"
+                  style={{
+                    fontFamily: "var(--font-montserrat), sans-serif",
+                    color: "var(--rym-navy)",
+                  }}
+                >
+                  <span className="mr-2 text-[#0EA5E9]">{song.order}.</span>
+                  {song.title}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

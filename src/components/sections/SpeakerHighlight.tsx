@@ -56,6 +56,16 @@ export default function SpeakerHighlight() {
           >
             {speaker.bio}
           </p>
+
+          {/* Message Translation */}
+          {speaker.messageTranslation && (
+            <p
+              className="max-w-lg text-sm font-bold uppercase tracking-[0.05em] text-[#0EA5E9] max-md:text-[10px]"
+              style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
+            >
+              Message Translation: {speaker.messageTranslation}
+            </p>
+          )}
         </div>
 
         {/* Right column — Image */}

@@ -123,6 +123,12 @@ export interface WhyAttendItem {
   gradient: string;
 }
 
+export interface Song {
+  title: string;
+  order: number;
+  note?: string;
+}
+
 export interface ScheduleItem {
   time: string;
   title: string;
@@ -130,6 +136,7 @@ export interface ScheduleItem {
   duration: string;
   icon?: string;
   speaker?: string;
+  note?: string;
 }
 
 export interface WhatToExpectSection {
@@ -139,6 +146,7 @@ export interface WhatToExpectSection {
   description: string;
   totalDuration: string;
   items: ScheduleItem[];
+  songs: Song[];
 }
 
 export interface HighlightsSection {
@@ -165,6 +173,7 @@ export interface Speaker {
   title: string;
   photo: string;
   bio: string;
+  messageTranslation?: string;
   socials: {
     instagram?: string;
     twitter?: string;
