@@ -2,15 +2,19 @@
 
 import { useEvent } from "@/hooks/useEvent";
 
-const WATERMARK_WORDS = ["REWRITE", "YOUR", "MIND"];
-
 export default function Hero() {
-  const { hero } = useEvent();
+  const { event, hero } = useEvent();
 
   const handleScroll = (id: string) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
+
+  const formattedDate = new Date(event.date).toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
 
   return (
     <section
@@ -21,7 +25,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-0 flex select-none flex-col items-center justify-center gap-8 opacity-5 max-md:hidden">
         {[0, 1, 2].map((row) => (
           <div key={row} className="flex items-center gap-8">
-            {WATERMARK_WORDS.map((word, i) => (
+            {hero.watermarkWords.map((word, i) => (
               <span
                 key={i}
                 className="text-[256px] font-black uppercase leading-none tracking-[-0.05em]"
@@ -48,13 +52,13 @@ export default function Hero() {
             className="flex items-center bg-[#0EA5E9] px-3 py-0.5 text-[8px] font-black uppercase tracking-[0.2em] text-white max-md:text-[7px] max-md:px-2"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
-            YOUTH REVIVAL 2026
+            {hero.topBadge}
           </span>
           <span
             className="flex items-center bg-black px-3 py-0.5 text-[8px] font-black uppercase tracking-[0.2em] text-white max-md:text-[7px] max-md:px-2"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
-            JUNE 28, 2026 • 10:00 AM
+            {formattedDate} &bull; {event.time}
           </span>
         </div>
 
@@ -66,18 +70,17 @@ export default function Hero() {
             color: "var(--rym-navy)",
           }}
         >
-          REWRITE
+          {hero.title}
           <br />
-          <span className="text-[#0EA5E9]">YOUR MIND</span>
+          <span className="text-[#0EA5E9]">{hero.mainTitleHighlight}</span>
         </h1>
 
-        {/* Subtitle */}
+        {/* Quote */}
         <p
           className="text-center text-lg italic leading-7 text-[#3E4850] max-md:text-sm max-md:leading-5"
           style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
         >
-          &ldquo;Be transformed by the renewing of your mind.&rdquo; — Romans
-          12:2
+          {hero.subtitle}
         </p>
 
         {/* Speaker tag */}
@@ -85,24 +88,24 @@ export default function Hero() {
           className="text-center text-xs font-bold italic uppercase leading-4 tracking-[0.1em] text-black/40 max-md:text-[9px] max-md:leading-3"
           style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
         >
-          FEATURING GUEST SPEAKER BRO. FELIX
+          {hero.speakerTag}
         </p>
 
         {/* CTA Buttons */}
         <div className="mt-2 flex flex-wrap items-stretch justify-center gap-3">
           <button
-            onClick={() => handleScroll("register")}
+            onClick={() => handleScroll(hero.ctaLink.replace("#", ""))}
             className="flex items-center justify-center bg-black px-10 py-4 text-lg font-black uppercase tracking-[-0.05em] text-white transition-opacity hover:opacity-90 max-md:px-6 max-md:py-3 max-md:text-sm"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
-            REGISTER NOW
+            {hero.ctaText}
           </button>
           <button
-            onClick={() => handleScroll("about")}
+            onClick={() => handleScroll(hero.secondaryCtaLink.replace("#", ""))}
             className="flex items-center justify-center border-4 border-black bg-transparent px-10 py-4 text-lg font-black uppercase tracking-[-0.05em] text-[#131B2E] transition-colors hover:bg-black/5 max-md:px-6 max-md:py-3 max-md:text-sm max-md:border-2"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
-            EVENT INFO
+            {hero.secondaryCtaText}
           </button>
         </div>
       </div>
@@ -116,7 +119,7 @@ export default function Hero() {
             color: "var(--rym-navy)",
           }}
         >
-          SCROLL DOWN
+          {hero.scrollDownText}
         </span>
         <div className="h-12 w-[2px] bg-black/20">
           <div className="h-full w-full bg-[#0EA5E9]" />

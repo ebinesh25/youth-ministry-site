@@ -1,7 +1,7 @@
 {
   "event": {
-    "name": "REWRITE YOUR MIND",
-    "tagline": "A Youth Revival Encounter — Rewrite Your Mind",
+    "name": "REWRITE",
+    "tagline": "A Youth Revival Encounter — Rewrite",
     "date": "2026-06-28T10:00:00",
     "endDate": "2026-06-28T12:00:00",
     "time": "10:00 AM",
@@ -10,18 +10,25 @@
     "posterImage": "/images/poster.svg",
     "logo": "/images/logo.svg",
     "logoWhite": "/images/logo-white.svg",
-    "reminderMessage": "Don't forget! ICC Youth Invitation Service — Rewrite Your Mind starts in 1 hour!"
+    "reminderMessage": "Don't forget! ICC Youth Invitation Service — Rewrite starts in 1 hour!"
   },
   "hero": {
     "backgroundImage": "/images/hero-bg.svg",
     "overlayColor": "#0f172a",
     "overlayOpacity": 0.7,
-    "title": "Rewrite Your Mind",
-    "subtitle": "\"Be transformed by the renewing of your mind.\" — Romans 12:2",
+    "title": "Rewrite",
+    "subtitle": "God Can Rewrite Your Story",
+    "mainTitleHighlight": false,
+    "watermarkWords": ["REWRITE", "YOUR", "MIND"],
+    "topBadge": "YOUTH REVIVAL 2026",
+    "quoteText": false,
+    "quoteAuthor": false,
+    "speakerTag": "FEATURING GUEST SPEAKER BRO. FELIX",
+    "scrollDownText": "SCROLL DOWN",
     "ctaText": "REGISTER NOW",
     "ctaLink": "#register",
     "secondaryCtaText": "EVENT INFO",
-    "secondaryCtaLink": "#location"
+    "secondaryCtaLink": "#about"
   },
   "about": {
     "heading": "About Our Youth Ministry",
@@ -322,12 +329,12 @@
     "longitude": 122.5
   },
   "seo": {
-    "title": "ICC Youth Invitation Service — Rewrite Your Mind | June 28, 2026",
+    "title": "ICC Youth Invitation Service — Rewrite | June 28, 2026",
     "description": "Join us for a powerful youth revival encounter! ICC Youth Invitation Service with Bro. Felix. Experience worship, fellowship, and life-changing messages. Register now!",
     "ogImage": "/images/og-image.svg",
     "ogType": "website",
     "twitterHandle": "@iccyouth",
-    "keywords": ["youth event", "christian youth", "youth revival", "ICC youth", "youth ministry", "church event", "iloilo youth", "rewrite your mind"]
+    "keywords": ["youth event", "christian youth", "youth revival", "ICC youth", "youth ministry", "church event", "iloilo youth", "Rewrite"]
   },
   "theme": {
     "primaryColor": "blue",

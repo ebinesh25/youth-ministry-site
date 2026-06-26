@@ -38,6 +38,13 @@ export interface HeroSection {
   overlayOpacity: number;
   title: string;
   subtitle: string;
+  mainTitleHighlight: string;
+  watermarkWords: string[];
+  topBadge: string;
+  quoteText: string;
+  quoteAuthor: string;
+  speakerTag: string;
+  scrollDownText: string;
   ctaText: string;
   ctaLink: string;
   secondaryCtaText: string;
