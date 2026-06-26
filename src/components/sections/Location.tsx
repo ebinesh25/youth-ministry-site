@@ -18,19 +18,21 @@ export default function Location() {
   ];
 
   return (
-    <section className="mx-auto border-t-4 border-black bg-[#FAF8FF] px-6 py-[120px] max-md:py-10">
-          <h2
-            className="text-[60px] font-black uppercase leading-[60px] tracking-[-0.05em] max-md:text-[36px] max-md:leading-[36px]"
-            style={{
-              fontFamily: "var(--font-montserrat), sans-serif",
-              color: "var(--rym-navy)",
-            }}
-          >
-            {location.heading}
-            <br />
-            <span className="text-[#0EA5E9] text-[32px]  tracking-[-0.05em]">{location.headingHighlight}</span>
-          </h2>
-      <div className="mt-8 flex max-w-[1280px] items-center justify-center gap-16 max-lg:flex-col max-lg:gap-8">
+    <section className="w-full border-t-4 border-black bg-[#FAF8FF] py-[120px] max-md:py-10">
+      <div className="mx-auto flex max-w-[1280px] flex-col items-center gap-8 px-6">
+        <h2
+          className="text-center text-[60px] font-black uppercase leading-[60px] tracking-[-0.05em] max-md:text-[36px] max-md:leading-[36px]"
+          style={{
+            fontFamily: "var(--font-montserrat), sans-serif",
+            color: "var(--rym-navy)",
+          }}
+        >
+          {location.heading}
+          <br />
+          <span className="text-[#0EA5E9] text-[32px] tracking-[-0.05em]">{location.headingHighlight}</span>
+        </h2>
+      </div>
+      <div className="mx-auto mt-8 flex max-w-[1280px] items-start justify-center gap-16 px-6 max-lg:flex-col max-lg:gap-8">
         {/* Left column — Info */}
         <div className="w-full flex flex-1 flex-col gap-6 max-md:gap-4">
 
