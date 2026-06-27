@@ -516,10 +516,10 @@
       "tiktok": "TikTok",
       "website": "Website"
     },
-    "phone": "+63 XXX XXX XXXX",
-    "email": "iccyouth@example.com",
-    "address": "ICC Main Sanctuary, Iloilo City, Philippines",
-    "churchName": "ICC Youth Ministry"
+    "phone": false,
+    "email": false,
+    "address": false,
+    "churchName": "India Church of Christ Chennai"
   },
   "socials": {
     "facebook": "https://facebook.com",
@@ -534,7 +534,7 @@
     "headingHighlight": "Find a place near you",
     "mapTitle": "Event Location",
     "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.0!2d122.5!3d10.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQyJzAwLjAiTiAxMjDCsDMwJzAwLjAiRQ!5e0!3m2!1sen!2sph!4v1",
-    "address": "ICC Main Sanctuary, Iloilo City, Philippines",
+    "address": false,
     "latitude": 10.7,
     "longitude": 122.5
   },

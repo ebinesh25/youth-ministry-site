@@ -254,9 +254,9 @@ export interface ContactSection {
   followUsHeading: string;
   socialSubtitle: string;
   platformLabels: Record<string, string>;
-  phone: string;
-  email: string;
-  address: string;
+  phone: string | false;
+  email: string | false;
+  address: string | false;
   churchName: string;
 }
 
@@ -275,7 +275,7 @@ export interface LocationSection {
   headingHighlight: string;
   mapTitle: string;
   embedUrl: string;
-  address: string;
+  address: string | false;
   latitude: number;
   longitude: number;
 }
