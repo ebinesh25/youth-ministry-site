@@ -93,6 +93,7 @@ export interface AboutSection {
   tagline: string;
   taglineHighlight: string | false;
   heading: string;
+  address: string;
   whoWeAre: {
     title: string;
     description: string;

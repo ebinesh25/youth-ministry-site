@@ -1,6 +1,6 @@
 "use client";
 
-import { Heart } from "lucide-react";
+import { Heart, MapPin } from "lucide-react";
 import { useEvent } from "@/hooks/useEvent";
 
 export default function About() {
@@ -10,7 +10,7 @@ export default function About() {
     <section id="about" className="w-full bg-[#FAF8FF] py-[120px] max-md:py-10">
       <div className="mx-auto flex max-w-[1280px] flex-col gap-24 px-6 max-md:gap-8">
         {/* Two column layout */}
-        <div className="flex items-start justify-center gap-20 max-lg:flex-col">
+        <div className="flex items-start justify-center gap-10 lg:gap-20 max-lg:flex-col">
           {/* Left Column — Text */}
           <div className="flex flex-1 flex-col gap-10 max-md:gap-5">
             <span
@@ -63,6 +63,23 @@ export default function About() {
                 </div>
               ))}
             </div>
+
+
+            {/* Address of where it is happening */}
+            <p
+              className="text-base leading-relaxed text-[#3E4850] max-md:text-sm"
+              style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
+            >
+              <MapPin className="mr-2 inline-block h-4 w-4 text-[#0EA5E9]" />
+              <a
+                href={`https://maps.google.com/?q=${encodeURIComponent(about.address)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 transition-colors hover:text-[#0EA5E9]"
+              >
+                {about.address}
+              </a>
+            </p>
           </div>
 
           {/* Right Column — Image Card */}

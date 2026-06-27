@@ -40,7 +40,7 @@ export default function Navbar() {
         "fixed top-0 z-50 w-full transition-all duration-300",
         scrolled
           ? "border-b border-black/5 bg-white/90 backdrop-blur-md"
-          : "bg-transparent backdrop-blur-xsm"
+          : "bg-transparent backdrop-blur-xsm",
       )}
     >
       <nav className="mx-auto flex max-w-[1280px] items-center justify-between px-6 py-4">
@@ -78,7 +78,7 @@ export default function Navbar() {
               backgroundColor: "var(--rym-black)",
             }}
           >
-            FEEDBACK
+            RESPONSE
           </a>
         </div>
 
@@ -116,7 +116,7 @@ export default function Navbar() {
                 backgroundColor: "var(--rym-black)",
               }}
             >
-              FEEDBACK
+              RESPONSE
             </a>
           </div>
         </div>
