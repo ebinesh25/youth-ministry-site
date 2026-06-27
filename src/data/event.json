@@ -62,6 +62,7 @@
       { "value": "2 HOURS", "label": "DURATION" },
       { "value": "FREE", "label": "ADMISSION" }
     ],
+    "image": "/images/eventImages/event.jpeg",
     "imageAlt": "Youth Community Gathering"
   },
   "whyAttendSection": {

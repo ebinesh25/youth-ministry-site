@@ -113,6 +113,7 @@ export interface AboutSection {
     author: string;
   };
   stats: StatItem[];
+  image: string;
   imageAlt: string;
 }
 

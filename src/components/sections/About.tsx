@@ -1,6 +1,6 @@
 "use client";
 
-import { MapPin, Clock, Heart } from "lucide-react";
+import { Heart } from "lucide-react";
 import { useEvent } from "@/hooks/useEvent";
 
 export default function About() {
@@ -73,7 +73,7 @@ export default function About() {
             {/* Image with border */}
             <div className="relative z-10 h-[576px] w-full max-w-[576px] border-4 border-black bg-white max-lg:h-[400px] max-md:h-[220px] max-md:border-2">
               <img
-                src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&q=80"
+                src={about.image}
                 alt={about.imageAlt}
                 className="h-full w-full object-cover"
               />
