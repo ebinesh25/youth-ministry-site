@@ -10,7 +10,6 @@ import Schedule from "@/components/sections/Schedule";
 import SongsSection from "@/components/sections/SongsSection";
 import Gallery from "@/components/sections/Gallery";
 import Testimonials from "@/components/sections/Testimonials";
-import Registration from "@/components/sections/Registration";
 import Location from "@/components/sections/Location";
 
 export default function HomePage() {
@@ -28,7 +27,6 @@ export default function HomePage() {
         <SongsSection />
         <Gallery />
         <Testimonials />
-        <Registration />
         <Location />
       </main>
       <Footer />

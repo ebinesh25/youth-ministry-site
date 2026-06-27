@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useEvent } from "@/hooks/useEvent";
 
 const NAV_ITEMS = [
   { id: "home", label: "HOME" },
@@ -13,6 +14,7 @@ const NAV_ITEMS = [
 ] as const;
 
 export default function Navbar() {
+  const { feedbackGoogleFormUrl } = useEvent();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -22,11 +24,13 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const HEADER_H = 80;
   const handleClick = (id: string) => {
     setIsOpen(false);
     const el = document.getElementById(id);
     if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+      const top = el.getBoundingClientRect().top + window.scrollY - HEADER_H;
+      window.scrollTo({ top, behavior: "smooth" });
     }
   };
 
@@ -36,7 +40,7 @@ export default function Navbar() {
         "fixed top-0 z-50 w-full transition-all duration-300",
         scrolled
           ? "border-b border-black/5 bg-white/90 backdrop-blur-md"
-          : "bg-transparent"
+          : "bg-transparent backdrop-blur-xsm"
       )}
     >
       <nav className="mx-auto flex max-w-[1280px] items-center justify-between px-6 py-4">
@@ -64,16 +68,18 @@ export default function Navbar() {
               {item.label}
             </button>
           ))}
-          <button
-            onClick={() => handleClick("register")}
+          <a
+            href={feedbackGoogleFormUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-8 py-3 text-xs font-black uppercase tracking-[-0.05em] text-white transition-opacity hover:opacity-90"
             style={{
               fontFamily: "var(--font-montserrat), sans-serif",
               backgroundColor: "var(--rym-black)",
             }}
           >
-            REGISTER
-          </button>
+            FEEDBACK
+          </a>
         </div>
 
         {/* Mobile hamburger */}
@@ -100,16 +106,18 @@ export default function Navbar() {
                 {item.label}
               </button>
             ))}
-            <button
-              onClick={() => handleClick("register")}
-              className="mt-2 w-full px-8 py-3 text-center text-xs font-black uppercase tracking-[-0.05em] text-white"
+            <a
+              href={feedbackGoogleFormUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 block w-full px-8 py-3 text-center text-xs font-black uppercase tracking-[-0.05em] text-white"
               style={{
                 fontFamily: "var(--font-montserrat), sans-serif",
                 backgroundColor: "var(--rym-black)",
               }}
             >
-              REGISTER
-            </button>
+              FEEDBACK
+            </a>
           </div>
         </div>
       )}

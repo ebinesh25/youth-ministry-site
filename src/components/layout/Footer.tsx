@@ -22,10 +22,12 @@ const SOCIAL_ICONS = [
 export default function Footer() {
   const { contact, location, socials } = useEvent();
 
+  const HEADER_H = 80;
   const handleClick = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+      const top = el.getBoundingClientRect().top + window.scrollY - HEADER_H;
+      window.scrollTo({ top, behavior: "smooth" });
     }
   };
 

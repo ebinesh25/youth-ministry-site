@@ -1,4 +1,5 @@
 {
+  "feedbackGoogleFormUrl": "https://forms.gle/FqufEPD3LgyYySba6",
   "event": {
     "name": "REWRITE",
     "tagline": "A Youth Revival Encounter — Rewrite",
@@ -25,10 +26,11 @@
     "quoteAuthor": "Romans 12:2",
     "speakerTag": "FEATURING GUEST SPEAKER BRO. FELIX",
     "scrollDownText": "SCROLL DOWN",
-    "ctaText": "REGISTER NOW",
-    "ctaLink": "#register",
-    "secondaryCtaText": "EVENT INFO",
-    "secondaryCtaLink": "#about"
+    "ctas": [
+      { "text": "SCHEDULE", "type": "scroll", "target": "#schedule" },
+      { "text": "SONGS", "type": "scroll", "target": "#songs" },
+      { "text": "FEEDBACK", "type": "link", "target": "feedbackGoogleFormUrl" }
+    ]
   },
   "about": {
     "badge": "ABOUT",

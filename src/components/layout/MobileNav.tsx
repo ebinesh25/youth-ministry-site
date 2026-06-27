@@ -9,7 +9,6 @@ const SECTIONS = [
   { id: "schedule", label: "SCHEDULE" },
   { id: "songs", label: "SONGS" },
   { id: "gallery", label: "GALLERY" },
-  { id: "register", label: "REGISTER" },
 ];
 
 export default function MobileNav() {
@@ -40,10 +39,12 @@ export default function MobileNav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScroll]);
 
+  const HEADER_H = 80;
   const handleClick = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+      const top = el.getBoundingClientRect().top + window.scrollY - HEADER_H;
+      window.scrollTo({ top, behavior: "smooth" });
     }
   };
 

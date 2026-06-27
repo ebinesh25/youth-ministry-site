@@ -6,6 +6,7 @@ export interface Venue {
 }
 
 export interface EventData {
+  feedbackGoogleFormUrl: string;
   event: EventInfo;
   hero: HeroSection;
   about: AboutSection;
@@ -64,6 +65,12 @@ export interface EventInfo {
   reminderMessage: string;
 }
 
+export interface CTA {
+  text: string;
+  type: "scroll" | "link";
+  target: string;
+}
+
 export interface HeroSection {
   backgroundImage: string;
   overlayColor: string;
@@ -77,10 +84,7 @@ export interface HeroSection {
   quoteAuthor: string;
   speakerTag: string;
   scrollDownText: string;
-  ctaText: string;
-  ctaLink: string;
-  secondaryCtaText: string;
-  secondaryCtaLink: string;
+  ctas: CTA[];
 }
 
 export interface AboutSection {

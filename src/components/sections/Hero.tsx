@@ -3,11 +3,15 @@
 import { useEvent } from "@/hooks/useEvent";
 
 export default function Hero() {
-  const { event, hero } = useEvent();
+  const { event, hero, feedbackGoogleFormUrl } = useEvent();
 
+  const HEADER_H = 80;
   const handleScroll = (id: string) => {
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    if (el) {
+      const top = el.getBoundingClientRect().top + window.scrollY - HEADER_H;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
   };
 
   const formattedDate = new Date(event.date).toLocaleDateString("en-US", {
@@ -98,13 +102,29 @@ export default function Hero() {
 
         {/* CTA Buttons */}
         <div className="mt-2 flex flex-wrap items-stretch justify-center gap-3 max-sm:w-full max-sm:flex-col max-sm:px-4">
-          <button
-            onClick={() => handleScroll(hero.secondaryCtaLink.replace("#", ""))}
-            className="flex items-center justify-center border-4 border-black bg-transparent px-10 py-4 text-lg font-black uppercase tracking-[-0.05em] text-[#131B2E] transition-colors hover:bg-black/5 max-md:px-6 max-md:py-3 max-md:text-sm max-md:border-2 max-sm:w-full"
-            style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
-          >
-            {hero.secondaryCtaText}
-          </button>
+          {hero.ctas.map((cta, i) =>
+            cta.type === "link" ? (
+              <a
+                key={i}
+                href={cta.target === "feedbackGoogleFormUrl" ? feedbackGoogleFormUrl : cta.target}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center border-4 border-black bg-transparent px-10 py-4 text-lg font-black uppercase tracking-[-0.05em] text-[#131B2E] transition-colors hover:bg-black/5 max-md:px-6 max-md:py-3 max-md:text-sm max-md:border-2 max-sm:w-full"
+                style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
+              >
+                {cta.text}
+              </a>
+            ) : (
+              <button
+                key={i}
+                onClick={() => handleScroll(cta.target.replace("#", ""))}
+                className="flex items-center justify-center border-4 border-black bg-transparent px-10 py-4 text-lg font-black uppercase tracking-[-0.05em] text-[#131B2E] transition-colors hover:bg-black/5 max-md:px-6 max-md:py-3 max-md:text-sm max-md:border-2 max-sm:w-full"
+                style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
+              >
+                {cta.text}
+              </button>
+            )
+          )}
         </div>
       </div>
 
