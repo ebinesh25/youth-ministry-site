@@ -97,6 +97,10 @@
       "gradient": "from-yellow-500 to-orange-500"
     }
   ],
+  "songSection": {
+    "heading": "SONGS.",
+    "headingHighlight": "LIST."
+  },
   "whatsToExpect": {
     "heading": "THE",
     "headingHighlight": "JOURNEY.",
@@ -178,12 +182,91 @@
       }
     ],
     "songs": [
-      { "title": "Alangara Vasalale", "order": 1 },
-      { "title": "Lord, I Lift Your Name on High", "order": 2 },
-      { "title": "Unga Naamam Uyaranum", "order": 3 },
-      { "title": "Above All (Communion)", "order": 4 },
-      { "title": "Nandri Solli (Before Lesson)", "order": 5 },
-      { "title": "Neer Ennai Marakkala (Closing)", "order": 6 }
+      {
+        "title": "Alangara Vasalale",
+        "slug": "alangara-vasalale",
+        "order": 1,
+        "language": "tamil",
+        "lyrics": [
+          { "section": "verse", "text": "அலங்கார வாசலாலே\nபிரவேசிக்க வந்து நிற்கிறோம்", "transliteration": "Alangaara vaasalaalae\nPiravaesikka vanthu nirkirom" },
+          { "section": "verse", "text": "தெய்வ வீட்டின் நன்மையாலே,\nநிரம்பிட வந்து நிற்கிறோம்", "transliteration": "Theyva veettin nanmaiyaalae,\nNirampida vanthu nirkirom" },
+          { "section": "chorus", "text": "ஆராதிக்க வந்தோம், அன்புகூற வந்தோம்\nயெகோவா தேவனையே,\nதுதித்திட வந்தோம் தொழுதிட வந்தோம்\nதூயவர் இயேசுவையே", "transliteration": "Aaraathikka vanthom, anpukoora vanthom\nYekovaa thaevanaiyae,\nThuthiththida vanthom tholuthida vanthom\nThooyavar Yesuvaiyae" },
+          { "section": "verse", "text": "ஆலயம் செல்வதே,\nஅது மகிழ்ச்சியை தந்திடுதே..\nஎன் சபையுடனே, உமை தொழுதிடவே\nகிருபையும் கிடைத்திட்டதே", "transliteration": "Aalayam selvathae,\nAthu makilchchiyai thanthiduthae..\nEn sabaiyudanae, umai tholuthidavae\nKirubaiyum kidaithittathae" },
+          { "section": "verse", "text": "நன்மை செய்தவர்கே – நாங்கள்\nநன்றி செலுத்துவோமே,\nஎம்காணிக்கையை, உம் கரங்களிலே\nஉற்சாகமாய் விதைக்கிறோமே", "transliteration": "Nanmai seythavarkae – naangal\nNandri seluththuvomae,\nEmkaanikkaiyai, um karangalilae\nUrsaagamaay vithaikkiromae" },
+          { "section": "verse", "text": "துதி கணம் மகிமையுமே\nமுழு-மனதோடு செலுத்தினோமே,\nசம்பூரண ஆசிர்வாதங்களால்\nதிருப்தியை அனுப்பிடுமே", "transliteration": "Thuthi kanam mahimaiyumae\nMuzhu-manathodu seluththinomae,\nSampoorana aasirvaathangalaal\nThirupthiyai anuppidumae" }
+        ]
+      },
+      {
+        "title": "Lord, I Lift Your Name on High",
+        "slug": "lord-i-lift-your-name-on-high",
+        "order": 2,
+        "language": "english",
+        "lyrics": [
+          { "section": "verse", "text": "Lord I lift Your name on high\nLord I love to sing Your praises\nI'm so glad You're in my life\nI'm so glad You came to save us" },
+          { "section": "verse", "text": "You came from heaven to earth to show the way\nFrom the earth to the cross, my debt to pay\nFrom the cross to the grave, from the grave to the sky\nLord I lift Your name on high" },
+          { "section": "chorus", "text": "Lord I lift Your name on high\nLord I love to sing Your praises\nI'm so glad You're in my life\nI'm so glad You came to save us" },
+          { "section": "verse", "text": "You came from heaven to earth to show the way\nFrom the earth to the cross, my debt to pay\nFrom the cross to the grave, from the grave to the sky\nLord I lift Your name on high" },
+          { "section": "ending", "text": "You came from heaven to earth to show the way\nFrom the earth to the cross, my debt to pay\nFrom the cross to the grave, from the grave to the sky\nLord I lift Your na…" }
+        ]
+      },
+      {
+        "title": "Unga Naamam Uyaranum",
+        "slug": "unga-naamam-uyaranum",
+        "order": 3,
+        "language": "tamil",
+        "lyrics": [
+          { "section": "verse", "text": "உங்க நாமம் உயரணும்\nஇன்று மேன்மை அடையனும்\nபாடுவேன் பாடுவோம் அல்லேலூயா", "transliteration": "Unga naamam uyaranum\nIntu maenmai ataiyanum\nPaaduvaen paaduvom Alleluya" },
+          { "section": "tag", "text": "அல்லேலூயா-4\nயாவே அலேல்\nஅல்லேலூயா-2", "transliteration": "Alleluya-4\nYaavae alael\nAlleluya-2" },
+          { "section": "verse", "text": "பெருங்காற்றும் அடங்கிப்போகும்\nஎக்கடலும் வழிதிறக்கும்\nஉங்க நாமம் உயர்த்தும்போது\nகன்மலையும் கரைந்து போகும்", "transliteration": "Perungaatrum adangip pogum\nEkkadalum vazhi thirakkum\nUnga naamam uyarthum pothu\nKanmalaiyum karainthu pogum" },
+          { "section": "chorus", "text": "இயேசுவே உம் நாமமே\nஉயரனும் அல்லேலூயா\nஇயேசுவே உம் நாமமே\nபெருகனும் அல்லேலூயா-2", "transliteration": "Yesuvae um naamamae\nUyaranum Alleluya\nYesuvae um naamamae\nPeruganum Alleluya-2" },
+          { "section": "verse", "text": "சிங்கத்தின் கெபியிலும்\nதீச்சூலை நடுவிலும்\nஉங்க நாமம் உயர்த்தும் போது\nசேதங்கள் அணுகிடாது", "transliteration": "Singaththin kebiyilum\nTheechoolai naduvilum\nUnga naamam uyarthum pothu\nSaethangal anugidaathu" },
+          { "section": "verse", "text": "சிறைச்சாலை அடைப்பதில்லை\nசங்கிலிகள் நிரந்தரமில்லை\nஉங்க நாமம் உயர்த்தும் போது\nஅஸ்திபாரம் நிலைப்பதில்லை", "transliteration": "Siraichaalai adaipathillai\nSangiligal nirantharamillai\nUnga naamam uyarthum pothu\nAsthiparam nilaippathillai" }
+        ]
+      },
+      {
+        "title": "Above All (Communion)",
+        "slug": "above-all-communion",
+        "order": 4,
+        "language": "english",
+        "lyrics": [
+          { "section": "verse", "text": "Above all powers\nAbove all kings\nAbove all nature and all created things\nAbove all wisdom and all the ways of man\nYou were here before the world began" },
+          { "section": "verse", "text": "Above all kingdoms\nAbove all thrones\nAbove all wonders the world has ever known\nAbove all wealth and treasures of the earth\nThere's no way to measure what you're worth" },
+          { "section": "chorus", "text": "Crucified\nLaid behind the stone\nYou lived to die\nRejected and alone\nLike a rose trampled on the ground\nYou took the fall\nAnd thought of me\nAbove all" }
+        ]
+      },
+      {
+        "title": "Nandri Solli (Before Lesson)",
+        "slug": "nandri-solli-before-lesson",
+        "order": 5,
+        "language": "tamil",
+        "lyrics": [
+          { "section": "verse", "text": "நன்றி சொல்லி உம்மை பாட வந்தோம்\nஉம் காருண்யத்தை எண்ணி போற்ற வந்தோம்", "transliteration": "Nanti solli ummai paada vanthom\nUm kaarunnyaththai enni pottra vanthom" },
+          { "section": "verse", "text": "வார்த்தையினால் நீர் சொன்னதெல்லாம்\nகரங்களினால் இன்று நிறைவேற்றினீர்", "transliteration": "Vaarththaiyinaal neer sonnathellaam\nKarangalinaal intu niraivaettineer" },
+          { "section": "chorus", "text": "நன்றி -2 சொல்வோம் உயிர் உள்ளவரை\nஒன்றும் குறையாமல் காத்திடும் நல்லவரை", "transliteration": "Nanti -2 solvom uyir ullavarai\nOntum kuraiyaamal kaaththidum nallavarai" },
+          { "section": "verse", "text": "காற்றுமில்ல மழையுமில்ல\nஆனாலும் வாய்க்காலை நிரப்பினீரே", "transliteration": "Kaattrumilla malaiyumilla\nAanaalum vaaykkaalai nirappineerae" },
+          { "section": "verse", "text": "உடன்படிக்கை செய்து நடத்தி வந்தீர்\nமாறாமல் எப்போதும் காத்துக் கொண்டீர்", "transliteration": "Udanpatikkai seythu nadaththi vanthaer\nMaaraamal eppothum kaaththuk konteer" },
+          { "section": "verse", "text": "கைவிடாமல் விட்டு விலகிடாமல்\nநெருங்கின பாதையிலும் கூட வந்தீர்", "transliteration": "Kaividaamal vittu vilagidaamal\nNerungina paathaiyilum kooda vanthaer" },
+          { "section": "verse", "text": "வெட்கப்பட்ட தேசத்திலே\nகீர்த்தியும் புகழ்ச்சியுமாக்கினீரே", "transliteration": "Vetkappatta thaechathilae\nKeerthiyum pugazhchiyumaakineerae" }
+        ]
+      },
+      {
+        "title": "Neer Ennai Marakkala (Closing)",
+        "slug": "neer-ennai-marakkala-closing",
+        "order": 6,
+        "language": "tamil",
+        "lyrics": [
+          { "section": "verse", "text": "வழி தெரிஞ்சும் நா தொலைஞ்சிபோனேன்\nபாத புரியாம பயந்து நின்னேன்", "transliteration": "Vazhi Therinjum Naa Tholanji ponen\nPaadha puriyama bayandhu ninnen" },
+          { "section": "verse", "text": "நூறு பேர தேடி நீங்க போகல\nதொலைந்து போன என்ன தேடிவந்திங்க", "transliteration": "Nooru perae thedi neenga pogala\nTholaindhu pona enna thedivandhinga" },
+          { "section": "chorus", "text": "நீர் என்ன மறக்கல\nஎன்ன விட்டு விலகல\nஏக்கமுள்ள கண்ணால\nஏங்கித்தான் நின்னீங்க", "transliteration": "Neer enna marakkala\nEnna vittu vilagala\nEkkamulla kannaala\nEngithaan ninneenga" },
+          { "section": "chorus", "text": "நீர் என்ன வெறுக்கல\nதள்ளி தூரம் போகல\nகால்கடக்க எனக்காக\nகடல் தாண்டி வந்திங்க", "transliteration": "Neer enna verukkala\nThalli thooram pogala\nKaalkadakka enakkaaga\nKadal thaandi vandhinga" },
+          { "section": "verse", "text": "சிறந்ததெல்லாம் கூட்டத்தில் இருக்க\nதரமிழந்த என்னை தேடி வந்தது ஏன்", "transliteration": "Sirandhathellaam koottathil irukka\nDharamizhantha ennai thedi vandhadhu yen" },
+          { "section": "verse", "text": "என்ன தேடுவத நீங்க நிறுத்தல\nஉங்க அன்புக்கு ஒரு எல்லை இல்ல", "transliteration": "Enna theduvadha neenga niruthala\nUnga anbukku oru ellai illa" },
+          { "section": "verse", "text": "புதியதுவக்கம் எனக்கு தந்திங்க\nஉங்க தோளின் மீது சுமந்து வந்திங்க", "transliteration": "Puthiyathuvakkam enakku thandhinga\nUnga tholin meedhu sumandhu vandhinga" },
+          { "section": "verse", "text": "கல்லெறியும் கூட்டத்தின் முன்னே\nஎன் ஆதரவாய் நின்றவர் நீரே", "transliteration": "Kalleriyum koottathin munnae\nEn aadharavaay ninravar neerae" },
+          { "section": "verse", "text": "என் கரம்பிடித்து தூக்கினீர்\nஎன் கறைகளெல்லாம் நீக்கினீர்", "transliteration": "En karambidithu thookineer\nEn karaigalaellaam neekineer" },
+          { "section": "ending", "text": "உம் பிள்ளையாக மாற்றி விட்டீரே\nஎன்னை தள்ளாத தகப்பன் நீரே", "transliteration": "Um pillaiyaaga maatri vitteerae\nEnnai thallaadha thagappan neerae" }
+        ]
+      }
     ]
   },
   "speaker": {

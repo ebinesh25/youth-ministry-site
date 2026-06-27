@@ -21,7 +21,7 @@
   body {
     background-color: var(--rym-bg);
     color: var(--rym-navy);
-    font-family: var(--font-montserrat), sans-serif;
+    font-family: var(--font-montserrat), var(--font-noto-sans-tamil), sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Montserrat, Noto_Sans_Tamil } from "next/font/google";
 import { EventProvider } from "@/components/providers/EventProvider";
 import { ConfettiProvider } from "@/components/providers/ConfettiProvider";
 import { getEventData } from "@/lib/event";
@@ -11,6 +11,13 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
   display: "swap",
   weight: ["400", "500", "600", "700", "900"],
+});
+
+const notoSansTamil = Noto_Sans_Tamil({
+  subsets: ["tamil"],
+  variable: "--font-noto-sans-tamil",
+  display: "swap",
+  weight: ["400", "500", "700", "900"],
 });
 
 export function generateMetadata(): Metadata {
@@ -44,7 +51,7 @@ export default function RootLayout({
   const data = getEventData();
 
   return (
-    <html lang="en" className={`${montserrat.variable} scroll-smooth`}>
+    <html lang="en" className={`${montserrat.variable} ${notoSansTamil.variable} scroll-smooth`}>
       <body className="antialiased">
         <EventProvider>
           <ConfettiProvider>{children}</ConfettiProvider>

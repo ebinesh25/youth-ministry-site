@@ -29,6 +29,7 @@ export interface EventData {
   theme: ThemeConfig;
   highlights: HighlightsSection;
   whatsToExpect: WhatToExpectSection;
+  songSection: SectionHeadingWithHighlight;
 }
 
 export interface SectionHeadingOnly {
@@ -123,10 +124,19 @@ export interface WhyAttendItem {
   gradient: string;
 }
 
+export interface LyricLine {
+  text: string;
+  transliteration?: string;
+  section?: "intro" | "verse" | "chorus" | "bridge" | "tag" | "ending";
+}
+
 export interface Song {
   title: string;
+  slug: string;
   order: number;
   note?: string;
+  language: "tamil" | "english";
+  lyrics: LyricLine[];
 }
 
 export interface ScheduleItem {

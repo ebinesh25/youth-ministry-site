@@ -7,6 +7,7 @@ import About from "@/components/sections/About";
 import WhyAttend from "@/components/sections/WhyAttend";
 import SpeakerHighlight from "@/components/sections/SpeakerHighlight";
 import Schedule from "@/components/sections/Schedule";
+import SongsSection from "@/components/sections/SongsSection";
 import Gallery from "@/components/sections/Gallery";
 import Testimonials from "@/components/sections/Testimonials";
 import Registration from "@/components/sections/Registration";
@@ -24,6 +25,7 @@ export default function HomePage() {
         <WhyAttend />
         <SpeakerHighlight />
         <Schedule />
+        <SongsSection />
         <Gallery />
         <Testimonials />
         <Registration />
