@@ -11,9 +11,9 @@ export default function SongsSection() {
 
   return (
     <section id="songs" className="w-full bg-white px-[192px] py-[120px] max-lg:px-6 max-md:py-10">
-      <div className="mx-auto flex max-w-[896px] flex-col items-stretch gap-8">
+      <div className="mx-auto flex max-w-[896px] flex-col items-stretch gap-4">
         {/* Heading */}
-        <div className="flex flex-col items-center gap-2">
+        <div className="flex flex-col items-center gap-4">
           <h2
             className="text-center text-[96px] font-black uppercase leading-[96px] tracking-[-0.05em] max-md:text-[40px] max-md:leading-[40px]"
             style={{
@@ -25,6 +25,13 @@ export default function SongsSection() {
             <br />
             <span className="text-[#0EA5E9]">{songSection.headingHighlight}</span>
           </h2>
+
+          <p
+            className="text-center text-[1rem] leading-[1rem] tracking-[-0.02em] max-md:text-[1rem] max-md:leading-[1rem]"
+            style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
+          >
+            {songSection.description}
+          </p>
         </div>
 
         {/* Song Cards */}

@@ -40,6 +40,7 @@ export interface SectionHeadingOnly {
 export interface SectionHeadingWithHighlight {
   heading: string;
   headingHighlight: string;
+  description?: string;
 }
 
 export interface SectionHeadingWithSubtitle {

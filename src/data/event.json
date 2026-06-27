@@ -101,8 +101,9 @@
     }
   ],
   "songSection": {
-    "heading": "SONGS.",
-    "headingHighlight": "LIST."
+    "heading": "SONGS",
+    "headingHighlight": "LIST.",
+    "description": "Click to open the lyrics to sing along"
   },
   "whatsToExpect": {
     "heading": "THE",
