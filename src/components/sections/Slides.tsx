@@ -82,13 +82,38 @@ export default function Slides() {
         <div className="flex w-full flex-col items-center gap-4">
           {/* Slide display */}
           <div className="w-full border-4 border-black bg-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] max-md:border-2 max-md:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-            <div ref={slideRef} className="relative aspect-[4/3] w-full bg-[#FAF8FF]">
+            <div ref={slideRef} className="relative aspect-[4/3] w-full bg-[#FAF8FF] select-none">
               <img
                 src={slideImg(current)}
                 alt={`Slide ${current + 1} of ${slideCount}`}
                 className="h-full w-full object-contain"
                 loading={current === 0 ? "eager" : "lazy"}
               />
+
+              {/* Prev overlay */}
+              <button
+                onClick={prev}
+                disabled={current === 0}
+                className="absolute left-0 top-0 flex h-full w-[15%] items-center justify-start pl-2 text-[#131B2E] opacity-0 transition-opacity hover:opacity-100 focus-visible:opacity-100 disabled:opacity-0 max-md:opacity-100 max-md:w-1/3"
+                aria-label="Previous slide"
+              >
+                <span className="flex items-center justify-center border-2 border-black bg-white/90 p-2 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] max-md:p-1.5">
+                  <ChevronLeft className="h-6 w-6 max-md:h-5 max-md:w-5" />
+                </span>
+              </button>
+
+              {/* Next overlay */}
+              <button
+                onClick={next}
+                disabled={current === slideCount - 1}
+                className="absolute right-0 top-0 flex h-full w-[15%] items-center justify-end pr-2 text-[#131B2E] opacity-0 transition-opacity hover:opacity-100 focus-visible:opacity-100 disabled:opacity-0 max-md:opacity-100 max-md:w-1/3"
+                aria-label="Next slide"
+              >
+                <span className="flex items-center justify-center border-2 border-black bg-white/90 p-2 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] max-md:p-1.5">
+                  <ChevronRight className="h-6 w-6 max-md:h-5 max-md:w-5" />
+                </span>
+              </button>
+
               {/* Fullscreen toggle */}
               <button
                 onClick={toggleFullscreen}
@@ -98,39 +123,15 @@ export default function Slides() {
               >
                 {fullscreen ? <Minimize className="h-4 w-4" /> : <Maximize className="h-4 w-4" />}
               </button>
+
+              {/* Slide counter overlay (bottom center) */}
+              <span
+                className="absolute bottom-2 left-1/2 -translate-x-1/2 border border-black bg-white/90 px-2 py-0.5 text-[11px] font-black tracking-[-0.03em] text-[#3E4850] max-md:text-[10px]"
+                style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
+              >
+                {current + 1} / {slideCount}
+              </span>
             </div>
-          </div>
-
-          {/* Controls */}
-          <div className="flex w-full items-center justify-between gap-4">
-            <button
-              onClick={prev}
-              disabled={current === 0}
-              className="flex items-center gap-1 border-2 border-black px-4 py-2 text-sm font-black uppercase tracking-[-0.05em] text-[#131B2E] transition-colors hover:bg-black/5 disabled:cursor-not-allowed disabled:opacity-30 max-md:px-3 max-md:py-1.5 max-md:text-xs"
-              style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
-              aria-label="Previous slide"
-            >
-              <ChevronLeft className="h-4 w-4" />
-              PREV
-            </button>
-
-            <span
-              className="text-sm font-black tracking-[-0.03em] text-[#3E4850] max-md:text-xs"
-              style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
-            >
-              {current + 1} / {slideCount}
-            </span>
-
-            <button
-              onClick={next}
-              disabled={current === slideCount - 1}
-              className="flex items-center gap-1 border-2 border-black px-4 py-2 text-sm font-black uppercase tracking-[-0.05em] text-[#131B2E] transition-colors hover:bg-black/5 disabled:cursor-not-allowed disabled:opacity-30 max-md:px-3 max-md:py-1.5 max-md:text-xs"
-              style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
-              aria-label="Next slide"
-            >
-              NEXT
-              <ChevronRight className="h-4 w-4" />
-            </button>
           </div>
         </div>
 
