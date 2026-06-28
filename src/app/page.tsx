@@ -2,6 +2,7 @@ import Navbar from "@/components/layout/Navbar";
 import MobileNav from "@/components/layout/MobileNav";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
+import WatchLive from "@/components/sections/WatchLive";
 import MarqueeHighlights from "@/components/sections/MarqueeHighlights";
 import About from "@/components/sections/About";
 import WhyAttend from "@/components/sections/WhyAttend";
@@ -20,6 +21,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <MarqueeHighlights />
+        <WatchLive />
         <About />
         <WhyAttend />
         <SpeakerHighlight />

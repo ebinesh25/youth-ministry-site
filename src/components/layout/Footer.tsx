@@ -5,6 +5,7 @@ import { useEvent } from "@/hooks/useEvent";
 
 const QUICK_LINKS = [
   { label: "HOME", id: "home" },
+  { label: "WATCH LIVE", id: "watchlive" },
   { label: "ABOUT", id: "about" },
   { label: "SCHEDULE", id: "schedule" },
   { label: "SONGS", id: "songs" },

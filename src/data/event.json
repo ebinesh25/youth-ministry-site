@@ -129,6 +129,13 @@
     "headingHighlight": "LIST.",
     "description": "Click to open the lyrics to sing along"
   },
+  "watchLive": {
+    "heading": "WATCH",
+    "headingHighlight": "LIVE.",
+    "youtubeUrl": "https://www.youtube.com/watch?v=VIDEO_ID",
+    "description": "Join us live as we worship and experience God's presence together.",
+    "buttonText": "WATCH ON YOUTUBE"
+  },
   "whatsToExpect": {
     "heading": "THE",
     "headingHighlight": "JOURNEY.",
@@ -840,12 +847,10 @@
       "region": "CENTRAL REGION",
       "dayTime": "Every Sunday 10:00 AM",
       "address": [
-        "Daniel Thomas School",
-        "11A, Perumal Koil Street, Razaak Garden,",
-        "Ayyavoo Colony, Arumbakkam,",
-        "Chennai – 600106"
+        "Maharastra Mandal",
+        "Vepery Chennai – 600007"
       ],
-      "googleMapsUrl": "https://maps.google.com/maps?q=Daniel+Thomas+School+Arumbakkam+Chennai+600106&output=embed"
+      "googleMapsUrl": "https://maps.google.com/maps?q=64+EVK+Sampath+Salai+Periamet+Vepery+Chennai+Tamil+Nadu+600007&output=embed"
     },
     {
       "region": "NORTH REGION",

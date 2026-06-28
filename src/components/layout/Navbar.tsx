@@ -7,6 +7,7 @@ import { useEvent } from "@/hooks/useEvent";
 
 const NAV_ITEMS = [
   { id: "home", label: "HOME" },
+  { id: "watchlive", label: "LIVE" },
   { id: "about", label: "ABOUT" },
   { id: "schedule", label: "SCHEDULE" },
   { id: "songs", label: "SONGS" },

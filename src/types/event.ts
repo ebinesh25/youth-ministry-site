@@ -5,6 +5,14 @@ export interface Venue {
   googleMapsUrl: string;
 }
 
+export interface WatchLiveSection {
+  heading: string;
+  headingHighlight: string;
+  youtubeUrl: string;
+  description: string;
+  buttonText: string;
+}
+
 export interface EventData {
   feedbackGoogleFormUrl: string;
   event: EventInfo;
@@ -30,6 +38,7 @@ export interface EventData {
   theme: ThemeConfig;
   highlights: HighlightsSection;
   whatsToExpect: WhatToExpectSection;
+  watchLive?: WatchLiveSection;
   songSection: SectionHeadingWithHighlight;
 }
 
