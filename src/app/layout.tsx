@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Montserrat, Noto_Sans_Tamil } from "next/font/google";
 import { EventProvider } from "@/components/providers/EventProvider";
 import { ConfettiProvider } from "@/components/providers/ConfettiProvider";
@@ -56,6 +57,13 @@ export default function RootLayout({
         <EventProvider>
           <ConfettiProvider>{children}</ConfettiProvider>
         </EventProvider>
+        {process.env.NODE_ENV === "production" && (
+          <Script
+            src="https://cloud.umami.is/script.js"
+            data-website-id="6f810684-872d-4a67-813e-bfa22285e843"
+            strategy="afterInteractive"
+          />
+        )}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

@@ -13,6 +13,17 @@ export interface WatchLiveSection {
   buttonText: string;
 }
 
+
+export interface SlidesSection {
+  heading: string;
+  headingHighlight: string;
+  description: string;
+  downloadLabel: string;
+  viewFullscreenLabel: string;
+  fileName: string;
+  slideCount: number;
+}
+
 export interface EventData {
   feedbackGoogleFormUrl: string;
   event: EventInfo;
@@ -39,6 +50,7 @@ export interface EventData {
   highlights: HighlightsSection;
   whatsToExpect: WhatToExpectSection;
   watchLive?: WatchLiveSection;
+  slides?: SlidesSection;
   songSection: SectionHeadingWithHighlight;
 }
 

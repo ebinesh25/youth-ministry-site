@@ -136,6 +136,15 @@
     "description": "Join us live as we worship and experience God's presence together.",
     "buttonText": "WATCH ON YOUTUBE"
   },
+  "slides": {
+    "heading": "SLIDES",
+    "headingHighlight": "PRESENTATION.",
+    "description": "Follow along with the presentation slides as you listen. Use the arrows to navigate through slides.",
+    "downloadLabel": "DOWNLOAD PPT",
+    "viewFullscreenLabel": "OPEN FULLSCREEN",
+    "fileName": "REWRITE.pptx",
+    "slideCount": 10
+  },
   "whatsToExpect": {
     "heading": "THE",
     "headingHighlight": "JOURNEY.",
